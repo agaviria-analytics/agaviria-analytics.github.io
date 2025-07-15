@@ -1,52 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alejandro G. | Analista de Datos</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #0d1117;
-      color: white;
-      margin: 0;
-      padding: 2rem;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
       text-align: center;
+      padding: 2rem 1rem 1rem;
     }
-    h1 {
+    header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      color: #fff;
     }
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
+    header p {
+      font-size: 1.2rem;
+      color: #c9d1d9;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 1.5rem;
     }
     .btn {
       display: inline-block;
-      margin: 1rem 0.5rem;
-      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      padding: 0.7rem 1.4rem;
       background-color: #238636;
-      color: white;
+      color: #fff;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
     }
-    .btn:hover {
-      background-color: #2ea043;
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #161b22;
+      border-radius: 10px;
+    }
+    .section h2 {
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\1F4CC ";
+    }
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .project-table th, .project-table td {
+      border: 1px solid #30363d;
+      padding: 0.75rem;
+    }
+    .project-table th {
+      background-color: #21262d;
+    }
+    a {
+      color: #58a6ff;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
+    <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
+    <div class="buttons">
+      <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
+      <a class="btn" href="https://www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
+      <a class="btn" href="https://github.com/agaviria-analytics" target="_blank">💻 Ver GitHub</a>
+    </div>
+  </header>
 
-  <h1>👋 Hola, soy Alejandro G.</h1>
-  <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
+  <section class="section">
+    <h2>👤 Perfil Profesional</h2>
+    <p>Soy un profesional con más de 10 años de experiencia en logística y operaciones, actualmente orientado al análisis de datos con Python, Power BI y SQL para procesos reales de automatización y visualización de información operativa.</p>
+    <ul>
+      <li>Transformar procesos manuales en soluciones automatizadas.</li>
+      <li>Generar dashboards con alertas y automatización de cargas.</li>
+      <li>Tener visión de negocio y análisis para la toma de decisiones.</li>
+    </ul>
+  </section>
 
-  <a href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" class="btn" target="_blank">📄 Descargar Hoja de Vida</a>
-  <a href="https://www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" class="btn" target="_blank">🔗 Ver mi LinkedIn</a>
-  <a href="https://github.com/agaviria-analytics" class="btn" target="_blank">💻 Ver GitHub</a>
+  <section class="section">
+    <h2>📋 Proyectos destacados</h2>
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>Proyecto</th>
+          <th>Descripción</th>
+          <th>Repositorio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>✍️ Asistencias Académicas</td>
+          <td>Lenguaje de datos en Python + visualización con alertas y Power BI</td>
+          <td><a href="#">Ver</a></td>
+        </tr>
+        <tr>
+          <td>📊 Análisis de Ventas con Power BI</td>
+          <td>Dashboard con modelo DAX, segmentaciones y visualización</td>
+          <td><a href="#">Ver</a></td>
+        </tr>
+        <tr>
+          <td>🐍 Web en Python + React</td>
+          <td>Automatización de consultas y navegación con Python desde scripts</td>
+          <td><a href="#">Ver</a></td>
+        </tr>
+        <tr>
+          <td>📈 Análisis de Ventas DITO</td>
+          <td>Proyecto empresarial completo desde Python hasta Power BI</td>
+          <td><a href="#">Ver</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
+  <section class="section">
+    <h2>🎓 Formación Académica</h2>
+    <ul>
+      <li>Tecnólogo en Gestión de Redes de Datos – SENA (2016)</li>
+      <li>Técnico Asistente en Desarrollo de Software – CESDE (2025)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>📜 Certificaciones y Cursos</h2>
+    <ul>
+      <li>Curso Power BI – CESDE</li>
+      <li>Curso Python – CESDE</li>
+      <li>Curso Power Query y Automatización – Platzi</li>
+      <li>Análisis de Datos con Google/Coursera</li>
+      <li>Curso Análisis de Datos – Universidad Católica de Oriente</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>📚 Blog de Aprendizaje</h2>
+    <ul>
+      <li>Automatización de reportes con Python y Excel</li>
+      <li>Transformación de datos con Power BI y segmentaciones</li>
+      <li>Dashboards interactivos en Power BI</li>
+      <li>Uso de tabla calendario y filtros inteligentes con DAX</li>
+    </ul>
+  </section>
 </body>
 </html>
-
