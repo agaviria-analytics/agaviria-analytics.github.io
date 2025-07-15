@@ -94,6 +94,16 @@ Este sitio fue desarrollado con GitHub Pages
 
 ---
 
+## 📜 Derechos de Autor
+
+Este portafolio ha sido desarrollado por Héctor Alejandro Gaviria Marín con fines profesionales.
+
+Todos los proyectos, textos y diseños son de autoría propia.  
+Está prohibida su copia, modificación o distribución sin autorización.
+
+© 2025 Héctor Alejandro Gaviria Marín. Todos los derechos reservados.
+---
+
 ## 📬 Contacto
 
 - 📍 Medellín, Colombia  
