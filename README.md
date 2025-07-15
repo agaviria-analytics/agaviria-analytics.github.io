@@ -1,4 +1,4 @@
-<h1 align="center">👋 Hola, soy Héctor Alejandro Gaviria Marín</h1>
+<h1 align="center">👋 Hola, bienvenido a mi portafolio</h1>
 
 <p align="center">
 Tecnólogo en Redes de Datos y Asistente en Desarrollo de Software. En transición profesional hacia la Analítica de Datos, aplicando conocimientos de Python, Power BI y SQL en proyectos reales de automatización y visualización de información operativa.
