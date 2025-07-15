@@ -87,7 +87,7 @@ Este sitio fue desarrollado con GitHub Pages
 
 ## 📬 Contacto
 
-- 📧 agaviria1408@gmail.com  
 - 📍 Medellín, Colombia  
+- 📧 agaviria1408@gmail.com  
 - 💼 [LinkedIn](https://www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265)
 - 🧑‍💻 [GitHub](https://github.com/agaviria-analytics)
