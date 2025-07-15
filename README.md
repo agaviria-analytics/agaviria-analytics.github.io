@@ -78,6 +78,15 @@ Me destaco por:
 
 ---
 
+---
+
+## 📄 Descargar Hoja de Vida
+
+[![Descargar Hoja de Vida](https://img.shields.io/badge/Descargar%20PDF%20📄-Hoja%20de%20Vida-blue?style=for-the-badge)](https://agaviria-analytics.github.io/CV_Hector_Gaviria_AnalistaDatos_2025.pdf)
+
+[![LinkedIn](https://img.shields.io/badge/Ver%20perfil%20en-LinkedIn-blue?logo=linkedin&style=for-the-badge)](https://www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265/)
+
+
 ## 🌐 Sitio Web del Portafolio
 
 Este sitio fue desarrollado con GitHub Pages  
@@ -89,5 +98,4 @@ Este sitio fue desarrollado con GitHub Pages
 
 - 📍 Medellín, Colombia  
 - 📧 agaviria1408@gmail.com  
-- 💼 [LinkedIn](https://www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265)
 - 🧑‍💻 [GitHub](https://github.com/agaviria-analytics)
