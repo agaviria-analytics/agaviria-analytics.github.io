@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alejandro G. | Analista de Datos</title>
+  <!-- Etiquetas Open Graph y Twitter Card -->
+  <meta property="og:title" content="Portafolio Héctor Alejandro Gaviria Marín">
+  <meta property="og:description" content="Proyectos de análisis de datos con Python, SQL, Power BI, Excel y más.">
+  <meta property="og:image" content="https://agaviria-analytics.github.io/img/preview-portafolio.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
@@ -13,16 +19,16 @@
       color: #f0f0f0;
       line-height: 1.6;
     }
-   .btn:hover {
+    .btn:hover {
       background-color: #2ea043;
       box-shadow: 0 0 12px rgba(46, 160, 67, 0.6);
       transform: translateY(-2px);
       transition: all 0.3s ease;
-  }
-  .btn:active {
+    }
+    .btn:active {
       transform: translateY(0);
       box-shadow: 0 0 5px rgba(46, 160, 67, 0.4);
-  }
+    }
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
@@ -72,44 +78,45 @@
     }
     .project-table {
       width: 100%;
+      min-width: 600px;
       border-collapse: collapse;
       margin-top: 1rem;
     }
     .project-table th, .project-table td {
       border: 1px solid #30363d;
       padding: 0.75rem;
+      text-align: left;
     }
     .project-table th {
       background-color: #21262d;
+      color: #f0f0f0;
     }
     a {
       color: #58a6ff;
     }
     .cert-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-   }
-
-.cert-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  min-width: 220px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-  }
-
-.cert-btn:hover {
-  background-color: #218838;
-  }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .cert-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      min-width: 220px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .cert-btn:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
@@ -122,18 +129,15 @@
         <a class="btn" style="min-width: 200px; text-align: center;" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
         <a class="btn" style="min-width: 200px; text-align: center;" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
         <a class="btn" style="min-width: 200px; text-align: center;" href="https://github.com/agaviria-analytics" target="_blank">🟢 Ver GitHub</a>
-      </div>
-
       <p style="font-size: 0.85rem; margin-top: 0.5rem;">
         *El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*
       </p>
-
       <p style="max-width: 700px; margin: 0 auto; text-align: justify; padding: 0 1rem;">
         🎯 Perfil orientado a la analítica de datos con proyectos aplicados en Python, Excel, Power BI, SQL Server y MySQL.
         Disponible para nuevos retos como Analista de Datos en entornos dinámicos y enfocados a resultados.
       </p>
     </header>
-  </div> <!-- CIERRE del contenedor -->
+    </div>
     <section class="section">
       <h2>👤 Perfil Profesional</h2>
       <p style="text-align: justify;">
@@ -150,13 +154,14 @@
  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
    <div style="display: flex; align-items: center; gap: 10px;">
     <h2 style="margin: 0; font-size: 1.5rem;">📈 Proyectos Destacados</h2>
-    <img src="Python.png" alt="Python" style="height: 26px;">
-    <img src="SQL.png" alt="SQL" style="height: 26px;">
-    <img src="PowerBI.png" alt="Power BI" style="height: 26px;">
-    <img src="Excel.png" alt="Excel" style="height: 26px;">
+    <img src="Python.png" alt="Ícono Python para proyectos" style="height: 26px;">
+    <img src="SQL.png" alt="Ícono SQL para proyectos" style="height: 26px;">
+    <img src="PowerBI.png" alt="Ícono Power BI para proyectos" style="height: 26px;">
+    <img src="Excel.png" alt="Ícono Excel para proyectos" style="height: 26px;">
   </div>
 </div>
 </div>
+ <div style="overflow-x: auto;"> 
   <table class="project-table">
     <thead>
       <tr>
@@ -240,6 +245,7 @@
       <td><a href="https://github.com/agaviria-analytics/curso-intensivo-python-7-dias" target="_blank">Ver</a></td>
     </tr>
   </table>
+</div>   
 </section>
  <section class="section">
   <h2>💼 Experiencia Profesional</h2>
@@ -313,7 +319,13 @@
   <h2>📬 Contacto</h2>
   <p>¿Te interesa mi perfil? Estoy abierto a nuevas oportunidades y retos profesionales.</p>
   <a href="mailto:agaviria1408@gmail.com" style="margin:0.5rem; padding:0.7rem 1.4rem; background-color:#238636; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold;">📩 Envíame un correo</a>
-  <p style="margin-top: 1rem; color: #aaa;">📞 También puedes contactarme al: <strong>+57 300 619 9324</strong></p>
+  <p style="margin-top: 1rem; color: #aaa;">
+  📞 También puedes contactarme al: 
+  <a href="https://wa.me/573006199324" target="_blank" style="color:#25D366; text-decoration: none; font-weight: bold;">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="18" style="vertical-align: middle; margin-right: 4px;">
+    +57 300 619 9324
+  </a>
+</p>
   <p style="margin-top: 1.5rem; color: #58a6ff;"><em>Gracias por visitar mi portafolio. Espero que podamos conectar pronto.</em></p>
 </section>
 <footer style="text-align: center; color: #888; font-size: 0.85rem; padding: 1rem 0; background-color: #0d1117;">
