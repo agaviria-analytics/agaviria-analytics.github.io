@@ -69,12 +69,15 @@
     ul {
       list-style: none;
       padding: 0;
-    }
-    ul li::before {
-      content: "\1F4CC ";
+      margin: 0;
     }
     ul li {
-      text-align: justify;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    ul li span {
+      margin-right: 0.5rem;
     }
     .project-table {
       width: 100%;
