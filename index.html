@@ -120,39 +120,42 @@
     .cert-btn:hover {
       background-color: #218838;
     }
-         .edu-list{list-style:none;margin:0;padding:0}
+       /* lista limpia */
+            .edu-list{margin:0;padding:0;list-style:none}
             .edu-item{
-              display:flex;
-              align-items:center;
-              gap:10px;
-              flex-wrap:wrap;        /* permite bajar el botón debajo si no cabe */
-              margin-bottom:10px;
+              display:flex; justify-content:space-between; align-items:center; gap:12px;
+              flex-wrap:wrap; margin-bottom:10px;
             }
-            .edu-title{line-height:1.35}
+            .edu-main{flex:1; min-width:240px; line-height:1.35}
+            .edu-actions{flex:0 0 auto}
             .edu-note{color:#c9d1d9}
             
+            /* botón “ghost” fino y elegante */
             .tag-link{
-              background:#2ea043;
-              color:#fff;
-              padding:4px 10px;
-              font-size:.82rem;
-              border-radius:12px;
-              text-decoration:none;
-              display:inline-flex;
-              align-items:center;
-              gap:6px;
-              white-space:nowrap;    /* evita cortar "Ver diploma" en 2 líneas */
-              transition:background .2s ease;
+              display:inline-flex; align-items:center; gap:8px;
+              padding:4px 10px; font-size:.82rem; border-radius:12px;
+              white-space:nowrap; text-decoration:none; transition:.2s;
             }
-            .tag-link:hover{background:#238636}
+            .tag-link.ghost{
+              background:rgba(46,160,67,.12);
+              border:1px solid rgba(46,160,67,.6);
+              color:#dbe7de;
+            }
+            .tag-link.ghost:hover{background:rgba(46,160,67,.22)}
             
-            .icon_pdf{width:18px;height:18px;object-fit:contain;display:block}
+            /* icono nítido y alineado */
+            .icon_pdf{
+              width:18px; height:18px; object-fit:contain; display:block;
+              border-radius:0; box-shadow:none; background:transparent; /* evita “burbujas” raras */
+              vertical-align:middle;
+            }
             
-            /* Mobile: coloca el botón debajo y ajusta tamaño */
-            @media (max-width: 480px){
+            /* móvil: apila el botón debajo, sin desbordes ni cortes */
+            @media (max-width:480px){
               .edu-item{align-items:flex-start}
-              .tag-link{margin-left:0;margin-top:6px;font-size:.8rem;padding:3px 9px}
-              .icon_pdf{width:20px;height:20px}
+              .edu-actions{width:auto}
+              .tag-link{margin-top:6px; font-size:.8rem; padding:3px 9px}
+              .icon_pdf{width:20px; height:20px}
             }
   </style>
 </head>
