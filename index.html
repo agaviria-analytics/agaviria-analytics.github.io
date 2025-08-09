@@ -120,43 +120,33 @@
     .cert-btn:hover {
       background-color: #218838;
     }
-       /* lista limpia */
-            .edu-list{margin:0;padding:0;list-style:none}
-            .edu-item{
-              display:flex; justify-content:space-between; align-items:center; gap:12px;
-              flex-wrap:wrap; margin-bottom:10px;
-            }
-            .edu-main{flex:1; min-width:240px; line-height:1.35}
-            .edu-actions{flex:0 0 auto}
-            .edu-note{color:#c9d1d9}
-            
-            /* botón “ghost” fino y elegante */
-            .tag-link{
-              display:inline-flex; align-items:center; gap:8px;
-              padding:4px 10px; font-size:.82rem; border-radius:12px;
-              white-space:nowrap; text-decoration:none; transition:.2s;
-            }
-            .tag-link.ghost{
-              background:rgba(46,160,67,.12);
-              border:1px solid rgba(46,160,67,.6);
-              color:#dbe7de;
-            }
-            .tag-link.ghost:hover{background:rgba(46,160,67,.22)}
-            
-            /* icono nítido y alineado */
-            .icon_pdf{
-              width:18px; height:18px; object-fit:contain; display:block;
-              border-radius:0; box-shadow:none; background:transparent; /* evita “burbujas” raras */
-              vertical-align:middle;
-            }
-            
-            /* móvil: apila el botón debajo, sin desbordes ni cortes */
-            @media (max-width:480px){
-              .edu-item{align-items:flex-start}
-              .edu-actions{width:auto}
-              .tag-link{margin-top:6px; font-size:.8rem; padding:3px 9px}
-              .icon_pdf{width:20px; height:20px}
-            }
+      /* lista */
+          .edu-list{margin:0;padding:0;list-style:none}
+          .edu-item{
+            display:flex; align-items:center; justify-content:space-between;
+            gap:12px; flex-wrap:wrap; margin-bottom:12px;
+          }
+          .edu-title{line-height:1.35; flex:1 1 auto; min-width:260px}
+          .edu-note{color:#c9d1d9}
+          
+          /* botón compacto y elegante */
+          .edu-btn{
+            display:inline-flex; align-items:center; gap:8px;
+            padding:4px 10px; border-radius:12px;
+            background:#2ea043; color:#fff; text-decoration:none;
+            border:1px solid rgba(255,255,255,.12);
+            white-space:nowrap; transition:background .2s ease, transform .1s ease;
+          }
+          .edu-btn:hover{background:#238636}
+          .edu-btn:active{transform:translateY(1px)}
+          
+          .icon_pdf{width:18px; height:18px; object-fit:contain; display:block}
+          
+          /* móvil: botón debajo del título, sin desbordes */
+           @media (min-width: 768px){
+            .edu-item { align-items: center; }
+            .edu-btn  { margin-left: auto; } /* empuja el botón hacia la derecha */
+          }
   </style>
 </head>
 <body>
@@ -218,16 +208,18 @@
           Análisis con Power BI – Caso Appol
         </td>
           <td> Dashboard profesional en Power BI con medidas DAX implícitas y explícitas, análisis de utilidad y margen por región, limpieza con Power Query y publicación web.
+          </td> 
           <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank">
              <img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub">
               </a> 
           </td>
+      </tr>
       <tr>
         <td>✍️ Análisis de abastecimientos</td>
         <td>Lenguaje de datos en Python + visualización con alertas y Power BI.</td>
         <td><a href="https://github.com/agaviria-analytics/analisis-abastecimientos" target="_blank">
            <img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub">
-        </a>
+          </a>
         </td>   
       </tr>
       <tr>
@@ -472,22 +464,21 @@
   </div>
 </section>
       <section class="section">
-        <h2>🎓 Formación Académica</h2>
-        <ul class="edu-list">
-          <li class="edu-item">
-            <div class="edu-main">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</div>
-            <div class="edu-actions">
-              <a href="Titulo_Tecnologia.pdf" target="_blank" class="tag-link ghost">
-                <img src="icon_pdf.png" alt="PDF" class="icon_pdf"> Ver diploma
+          <h2>🎓 Formación Académica</h2>
+          <ul class="edu-list">
+            <li class="edu-item">
+              <span class="edu-title">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</span>
+              <a href="Titulo_Tecnologo_Redes_SENA.pdf" target="_blank" rel="noopener" class="edu-btn">
+                <img src="icon_pdf.png" alt="PDF" class="icon_pdf" width="20" height="20" loading="lazy">
               </a>
-            </div>
-          </li>
-          <li class="edu-item">
-            <div class="edu-main">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</div>
-            <div class="edu-actions"><em class="edu-note">(Certificación en trámite)</em></div>
-          </li>
-        </ul>
-      </section>
+            </li>
+        
+            <li class="edu-item">
+              <span class="edu-title">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</span>
+              <em class="edu-note">(Certificación en trámite)</em>
+            </li>
+          </ul>
+        </section>
   <section class="section" id="certificados">
   <h2 style="text-align: center;">🎓 Certificados Destacados</h2>
   <p style="text-align: center; margin-bottom: 1.5rem;">
