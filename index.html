@@ -121,27 +121,29 @@
       background-color: #218838;
     }
          .tag-link {
-        background-color: #2ea043; /* Verde profesional */
-        color: white;
-        padding: 4px 10px;
-        font-size: 0.85rem;
-        border-radius: 12px;
-        margin-left: 10px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        transition: background-color 0.3s ease;
-      }
+            background-color: #2ea043; /* Verde */
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 12px;
+            margin-left: 8px;
+            text-decoration: none;
+            display: inline-flex; /* siempre en la misma línea */
+            align-items: center; /* centra verticalmente */
+            gap: 6px; /* espacio entre icono y texto */
+            white-space: nowrap; /* evita que se rompa en dos líneas */
+            transition: background-color 0.3s ease;
+          }
       
       .tag-link:hover {
         background-color: #238636; /* Verde más oscuro */
       }
       
-      .icon_pdf {
-        width: 18px;
-        height: 18px;
-      }
+        .icon-pdf {
+            width: 16px;  /* más compacto */
+            height: 16px;
+            object-fit: contain; /* para mantener proporción */
+    }
   </style>
 </head>
 <body>
