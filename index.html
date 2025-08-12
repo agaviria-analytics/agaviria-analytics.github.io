@@ -201,28 +201,63 @@
                     <p style="font-size: 0.85rem; margin-top: 0.5rem;">
                       *El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*
                      </p>
-                    <p style="max-width: 700px; margin: 0 auto; text-align: justify; padding: 0 1rem;">
-                      🎯 <strong>Analista de Datos Junior</strong><br><br>
-                      Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.  
-                      Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos. 💡  
-                      Experiencia en <strong>Power BI (DAX, modelado estrella, KPIs)</strong>, <strong>SQL (consultas y joins)</strong> y <strong>Python (pandas, limpieza y visualización de datos)</strong>.  
-                      Aplicación en la creación de dashboards e indicadores.  
-                      ⚙ Participación en proyectos de automatización de reportes en Excel y SAP, mejorando tiempos de gestión y calidad de los datos.
-                    </p>
+                    <style>
+                      /* --- Tipografía y espaciado --- */
+                      .bio-wrap{max-width:700px;margin:0 auto;padding:0 1rem;}
+                      .bio-wrap p{margin:.5rem 0 0 0; line-height:1.6; text-align:justify;}
+                      .bio-wrap h2{margin:.75rem 0 .25rem; font-size:1.1rem; display:flex; gap:.5rem; align-items:center;}
+                      .bio-wrap .lead{font-weight:600;}
+                      .bio-wrap .kws{font-weight:700;}
                     
-                    <section class="section">
-                      <h2>🙋‍♂️ Sobre mí</h2>
-                      <p style="text-align: justify;">
-                        📚 Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.  
-                        Mi trayectoria en logística y operaciones me ha dado una base sólida para comprender procesos empresariales.  
-                        🔍 Hoy complemento esa experiencia con herramientas como <strong>Power BI, Excel, Python y SQL</strong> para optimizar reportes, automatizar tareas y desarrollar visualizaciones útiles para la toma de decisiones.  
-                        🚀 Busco seguir creciendo profesionalmente en entornos dinámicos y colaborativos.
+                      /* --- Lista con icono a la izquierda --- */
+                      .clean-list{list-style:none; padding:0; margin:.5rem 0 0;}
+                      .clean-list li{display:flex; align-items:flex-start; gap:.5rem; margin:.4rem 0; text-align:justify;}
+                      .li-icon{min-width:1.2rem; line-height:1.6; text-align:center; opacity:.9;}
+                    
+                      /* --- Ajustes móviles --- */
+                      @media (max-width:480px){
+                        .bio-wrap p, .clean-list li{font-size:15.5px;}
+                        .bio-wrap h2{font-size:1.05rem;}
+                      }
+                    </style>
+                    
+                    <div class="bio-wrap">
+                      <!-- PERFIL -->
+                      <h2>🎯 Analista de Datos Junior</h2>
+                      <p class="lead">
+                        Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.
+                        Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.
                       </p>
-                      <ul style="list-style: none; padding-left: 0; text-align: justify;">
-                        <li>⚙ <strong>Automatización</strong> de procesos manuales con Python y Excel.</li>
-                        <li>📊 <strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</li>
-                        <li>🔗 <strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</li>
+                      <p>
+                        Experiencia en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>,
+                        <span class="kws">SQL (consultas y joins)</span> y
+                        <span class="kws">Python (pandas, limpieza y visualización de datos)</span>,
+                        aplicados a la creación de dashboards e indicadores.
+                      </p>
+                      <p>
+                        Participación en proyectos de automatización de reportes en Excel y SAP, mejorando
+                        tiempos de gestión y calidad de los datos.
+                      </p>
+                    
+                      <!-- SOBRE MÍ -->
+                      <h2>👋 Sobre mí</h2>
+                      <p>
+                        Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.
+                        Mi trayectoria en logística y operaciones me dio una base sólida para entender procesos
+                        empresariales. Hoy la complemento con <span class="kws">Power BI, Excel, Python y SQL</span>
+                        para optimizar reportes, automatizar tareas y crear visualizaciones útiles para la toma
+                        de decisiones. Busco seguir creciendo en entornos dinámicos y colaborativos.
+                      </p>
+                    
+                      <ul class="clean-list">
+                        <li><span class="li-icon">⚙</span>
+                            <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
+                        <li><span class="li-icon">📊</span>
+                            <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
+                        <li><span class="li-icon">🔗</span>
+                            <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
                       </ul>
+                    </div>
                     </section>
               <section class="section">
                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
