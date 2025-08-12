@@ -370,7 +370,41 @@ td.descripcion {
   word-break: break-word;
   height: auto;
   overflow: visible;
+}   
+/* === FIX: que no se corte la Descripción en móvil vertical === */
+@media (max-width:480px){
+  .project-table td:nth-child(2){
+    display:block !important;              /* anula -webkit-box */
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+  .project-table tr{ height:auto !important; }
 }    
+ /* === FIX: "Ver diploma" junto al texto, incluso en móvil vertical === */
+.edu-list{ list-style:none; padding:0; margin:0; }
+.edu-item{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:.6rem !important;
+  flex-wrap:nowrap !important;          /* NO se va abajo en vertical */
+}
+.edu-title{ flex:1 1 auto !important; min-width:0 !important; }
+.btn-diploma{
+  background:#28a745; color:#fff; border:none; border-radius:6px;
+  padding:4px 10px; font-size:.85rem; line-height:1; display:inline-block;
+}
+.btn-diploma:hover{ background:#218838; }
+
+/* Si la pantalla es MUY angosta, reducimos un pelín el botón */
+@media (max-width:360px){
+  .btn-diploma{ padding:3px 8px; font-size:.8rem; }
+}   
 </style>
 </head>
 <body>
@@ -575,8 +609,7 @@ td.descripcion {
     <ul class="edu-list">
       <li class="edu-item">
         <span class="edu-title">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</span>
-          <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
-        </div>
+        <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
       </li>
       <li class="edu-item">
         <span class="edu-title">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</span>
