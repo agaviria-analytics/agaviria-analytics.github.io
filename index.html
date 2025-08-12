@@ -148,6 +148,83 @@
 footer p{
   text-align:justify; text-justify:inter-word;
 }
+/* === Tabla: recuperar celdas claras y espaciado legible === */
+.project-table{
+  border-collapse: separate !important;   /* vuelve a separar celdas */
+  border-spacing: 0 !important;           /* sin huecos “raros” laterales */
+  table-layout: fixed;                    /* mantiene anchos consistentes */
+}
+.project-table th,
+.project-table td{
+  border: 1px solid #30363d !important;
+  padding: .7rem .75rem !important;
+  vertical-align: top;
+  background: #121820;                    /* leve contraste por fila */
+}
+.project-table thead th{
+  background:#21262d !important;
+}
+
+/* Columna Repositorio controlada */
+.project-table th:nth-child(3),
+.project-table td:nth-child(3){
+  width: 120px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  padding-left: .45rem !important;
+  padding-right: .45rem !important;
+}
+/* Badge GitHub sin deformarse */
+.project-table td:nth-child(3) a{
+  display:inline-block !important;
+}
+.project-table td:nth-child(3) a img{
+  height: 22px !important;   /* tamaño estable */
+  width: auto !important;    /* sin estirar */
+  max-width: 110px !important;
+}
+
+/* Responsivo tabla */
+@media (max-width: 480px){
+  .project-table th:nth-child(3),
+  .project-table td:nth-child(3){ width: 100px !important; }
+  .project-table td:nth-child(3) a img{ height: 20px !important; max-width: 96px !important; }
+}
+
+/* === Certificados: misma “píldora” verde y espaciado uniforme === */
+#certificados .cert-grid{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:12px !important;
+}
+#certificados .cert-grid a{
+  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+  padding:.5rem .9rem; border-radius:10px;
+  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
+  min-width: 220px; text-align:center;
+  box-shadow:0 4px 6px rgba(0,0,0,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+#certificados .cert-grid a:hover{
+  background:#2ea043; transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+
+/* === Educación: botón “Ver diploma” con el mismo look === */
+.edu-btn-wrap .btn{
+  width: 220px; background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
+}
+.edu-btn-wrap .btn:hover{
+  background:#2ea043; transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+
+/* === Footer: alineación limpia (izquierda en desktop, centro en móvil) === */
+footer p{
+  max-width: 980px; margin: .4rem auto; text-align: left;
+  line-height: 1.5;
+}
+@media (max-width:600px){
+  footer p{ text-align:center; }
+}
 
     
   </style>
