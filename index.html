@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -12,257 +12,191 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="favicon.png" />
-
   <style>
-    /* ========== BASE ========== */
-    :root{
-      --bg:#0d1117; --panel:#161b22; --muted:#c9d1d9; --edge:#2a3342;
-      --accent:#58a6ff;
-    }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif; background:var(--bg); color:#e5e7eb; }
-    a{ color:inherit; }
+  /* ========== BASE ========== */
+  :root{
+    --bg:#0d1117; --panel:#161b22; --muted:#c9d1d9; --edge:#2a3342;
+    --accent:#58a6ff; --green:#238636; --green-hover:#2ea043;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;
+    background:var(--bg); color:#e5e7eb;
+  }
+  a{ color:inherit; text-decoration:none; }
 
-    /* ========== BOTONES (verde con hover “flotante”) ========== */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-      padding:.7rem 1.4rem; font-size:1rem; line-height:1; font-weight:700;
-      border-radius:8px; border:1px solid #1f6f2e; text-decoration:none;
-      background:#238636; color:#fff; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{ background:#2ea043; border-color:#1f6f2e; transform:translateY(-2px); box-shadow:0 8px 18px rgba(46,160,67,.35); }
-    .btn:active{ transform:translateY(0); box-shadow:0 4px 10px rgba(46,160,67,.25); }
-    /* Variantes (si necesitas un botón oscuro/contorno) */
-    .btn--ghost{ background:transparent; color:#e5e7eb; border-color:#334155; }
-    .btn--sm{ padding:.45rem .9rem; font-size:.95rem; }
+  /* ========== BOTONES (verde con hover “flotante”) ========== */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.7rem 1.4rem; font-size:1rem; line-height:1; font-weight:700;
+    border-radius:8px; border:1px solid #1f6f2e;
+    background:var(--green); color:#fff;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover{ background:var(--green-hover); border-color:#1f6f2e; transform:translateY(-2px); box-shadow:0 8px 18px rgba(46,160,67,.35); }
+  .btn:active{ transform:translateY(0); box-shadow:0 4px 10px rgba(46,160,67,.25); }
+  .btn--ghost{ background:transparent; color:#e5e7eb; border-color:#334155; }
+  .btn--sm{ padding:.45rem .9rem; font-size:.95rem; }
+  .btn--primary{ /* por si usas btn--primary en Contacto */
+    background:var(--green); border-color:#1f6f2e; color:#fff;
+  }
 
-    /* Misma anchura para los 3 botones del header */
-    .buttons{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
-    .buttons .btn{ width:220px; }               /* <- ajusta 220–240 a gusto */
-    @media (max-width:480px){
-      .buttons .btn{ width:100%; max-width:320px; }
-      .btn, .btn *{ transform:none !important; } /* sin “salto” en móvil */
-    }
+  /* ========== HEADER ========== */
+  header{ text-align:center; padding:1.5rem 1rem .5rem; }
+  header h1{ font-size:2.2rem; margin:0 0 .4rem; }
+  header p{ color:var(--muted); margin:.25rem 0 0; }
 
-    /* ========== SECCIONES ========== */
-    .section{ max-width: 980px; margin:2rem auto; padding:1.5rem; background:var(--panel); border-radius:10px; }
-    .section h2{ color:var(--accent); margin:0 0 1rem; }
-    .divider{ border:0; height:1px; background:#30363d; margin:.8rem 0; }
+  /* Botones del header: mismo ancho */
+  .buttons{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
+  .buttons .btn{ width:230px; }
+  @media (max-width:480px){
+    .buttons .btn{ width:100%; max-width:320px; }
+    .btn, .btn *{ transform:none !important; } /* sin “saltitos” en móvil */
+  }
 
-    /* Header */
-    header{ text-align:center; padding:1.5rem 1rem .5rem; }
-    header h1{ font-size:2.2rem; margin:0 0 .4rem; }
-    header p{ color:var(--muted); margin:.25rem 0 0; }
-    .buttons {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  justify-content: center;
-}
+  /* ========== SECCIONES ========== */
+  .section{ max-width: 980px; margin:2rem auto; padding:1.5rem; background:var(--panel); border-radius:10px; }
+  .section h2{ color:var(--accent); margin:0 0 1rem; }
+  .divider{ border:0; height:1px; background:#30363d; margin:.8rem 0; }
 
-.buttons .btn {
-  width: 230px; /* mismo ancho para todos */
-}
+  /* Extras de bio */
+  .clean-list{ list-style:none; padding-left:0; margin:0; display:grid; gap:.5rem; }
+  .clean-list .li-icon{ width:22px; display:inline-block; text-align:center; margin-right:.35rem; }
+  .kws{ color:#eaf2ff; }
 
-@media (max-width: 480px) {
-  .buttons .btn {
-    width: 100%;
+  /* ========== TABLA DE PROYECTOS ========== */
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll::-webkit-scrollbar{ height:8px; }
+  .table-scroll::-webkit-scrollbar-thumb{ background:#2a3342; border-radius:6px; }
+
+  .project-table{
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    width:100%;
+  }
+  .project-table thead th{
+    background:#21262d;
+    border: 1px solid #30363d;
+    padding:.7rem .75rem;
+    text-align:left;
+  }
+  .project-table th, .project-table td{
+    border: 1px solid #30363d;
+    padding: .7rem .75rem;
+    background: #121820;
+    vertical-align: top;
+  }
+
+  /* Columna 1: iconos consistentes */
+  .project-table td:first-child img{
+    max-height:25px; width:auto; vertical-align:middle; margin-right:6px;
+  }
+
+  /* Columna 2: descripción uniforme con clamp */
+  .project-table td:nth-child(2){
     max-width: 320px;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    min-height: 60px;               /* altura mínima pareja */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;          /* máx. 3 líneas visibles */
+    -webkit-box-orient: vertical;
   }
-  .btn, .btn * {
-    transform: none !important;
+
+  /* Columna 3: repositorio con badge estable */
+  .project-table th:nth-child(3),
+  .project-table td:nth-child(3){
+    width: 120px;
+    text-align: center;
+    white-space: nowrap;
+    padding-left: .45rem;
+    padding-right: .45rem;
   }
-}
-              /* === 1) Header: mismo ancho en los 3 botones === */
-.buttons{
-  margin-top:1rem;
-  display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center;
-}
-.buttons .btn{
-  width:230px;                 /* igual ancho para los 3 */
-}
-@media (max-width:480px){
-  .buttons .btn{ width:100%; max-width:320px; }
-  .btn, .btn *{ transform:none !important; }  /* sin “saltitos” en móvil */
-}
+  .project-table td:nth-child(3) a{ display:inline-block; }
+  .project-table td:nth-child(3) a img{
+    height: 24px; width:auto; max-width:110px; display:inline-block;
+  }
 
-/* === 2) Tabla Proyectos: columna Repositorio ordenada === */
-.project-table th:nth-child(3),
-.project-table td:nth-child(3){
-  width:120px;                 /* un poco más ancha para el badge */
-  text-align:center;
-  white-space:nowrap;
-  padding-left:.45rem; padding-right:.45rem;
-}
-.project-table td:nth-child(3) a img{
-  height:24px;                 /* compacta el shield */
-  max-width:110px;
-  display:inline-block;
-}
-@media (max-width:480px){
-  .project-table th:nth-child(3),
-  .project-table td:nth-child(3){ width:100px; }
-  .project-table td:nth-child(3) a img{ height:22px; max-width:96px; }
-}
+  /* Hover tarjeta */
+  .project-table tr{
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .project-table tr:hover{
+    transform: translateY(-2px);
+    background: #1e2530;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  }
 
-/* === 3) Certificados: mismos “píldora” verdes que el header === */
-#certificados .cert-grid a{
-  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
-  padding:.5rem .9rem; border-radius:10px;
-  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
-  min-width:220px; text-align:center;
-  box-shadow:0 4px 6px rgba(0,0,0,.2);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-#certificados .cert-grid a:hover{
-  background:#2ea043;
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
+  /* Responsivo tabla */
+  @media (max-width:768px){
+    .project-table td:nth-child(2){
+      max-width: 200px;
+      font-size: 0.9rem;
+      min-height: 70px;           /* un poco más en móvil */
+      -webkit-line-clamp: 4;      /* permite 4 líneas */
+    }
+    .project-table th:nth-child(3),
+    .project-table td:nth-child(3){ width: 100px; }
+    .project-table td:nth-child(3) a img{ height: 22px; max-width: 96px; }
+    .project-table td:first-child img{ max-height:22px; }
+  }
 
-/* === 4) Educación: “Ver diploma” con el mismo look verde === */
-.edu-btn-wrap .btn{
-  width:220px;
-  background:#238636; border:1px solid #1f6f2e; color:#fff;
-  font-weight:700;
-}
-.edu-btn-wrap .btn:hover{
-  background:#2ea043; transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
+  /* ========== EDUCACIÓN ========== */
+  .edu-list{ list-style:none; padding:0; margin:0; display:grid; gap:.8rem; }
+  .edu-item{
+    display:grid; grid-template-columns: 1fr auto; align-items:center; gap:.75rem;
+  }
+  .edu-title{ display:block; }
+  .edu-note{ color:var(--muted); font-size:.95rem; }
+  .edu-btn-wrap .btn{
+    width: 220px; background:var(--green); border:1px solid #1f6f2e; color:#fff; font-weight:700;
+  }
+  .edu-btn-wrap .btn:hover{ background:var(--green-hover); transform:translateY(-2px); box-shadow:0 8px 18px rgba(46,160,67,.35); }
+  @media (max-width:640px){
+    .edu-item{ grid-template-columns: 1fr; } /* apila en móvil */
+    .edu-btn-wrap{ margin-top:.4rem; }
+  }
 
-/* === 5) Blog: lista alineada y limpia (sin inline-styles) === */
-.section ul[style*="list-style:none"]{
-  padding:0 !important; list-style:none !important; margin:0;
-  display:grid; gap:.5rem;
-}
-.section ul[style*="list-style:none"] li{
-  display:grid; grid-template-columns:22px 1fr; align-items:start; column-gap:.5rem;
-}
-.section ul[style*="list-style:none"] li > span{
-  text-align:center; width:22px !important; display:inline-block !important;
-}
+  /* ========== CERTIFICADOS ========== */
+  #certificados .cert-grid{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:12px;
+  }
+  #certificados .cert-grid a{
+    display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+    padding:.5rem .9rem; border-radius:10px;
+    background:var(--green); border:1px solid #1f6f2e; color:#fff; font-weight:700;
+    text-align:center;
+    min-width: 240px; max-width: 260px;
+    box-shadow:0 4px 6px rgba(0,0,0,.2);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  #certificados .cert-grid a:hover{
+    background:var(--green-hover); transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(46,160,67,.35);
+  }
 
-/* === 6) Footer: texto justificado === */
-footer p{
-  text-align:justify; text-justify:inter-word;
-}
-/* === Tabla: recuperar celdas claras y espaciado legible === */
-.project-table{
-  border-collapse: separate !important;   /* vuelve a separar celdas */
-  border-spacing: 0 !important;           /* sin huecos “raros” laterales */
-  table-layout: fixed;                    /* mantiene anchos consistentes */
-}
-.project-table th,
-.project-table td{
-  border: 1px solid #30363d !important;
-  padding: .7rem .75rem !important;
-  vertical-align: top;
-  background: #121820;                    /* leve contraste por fila */
-}
-.project-table thead th{
-  background:#21262d !important;
-}
-
-/* Columna Repositorio controlada */
-.project-table th:nth-child(3),
-.project-table td:nth-child(3){
-  width: 120px !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-  padding-left: .45rem !important;
-  padding-right: .45rem !important;
-}
-/* Badge GitHub sin deformarse */
-.project-table td:nth-child(3) a{
-  display:inline-block !important;
-}
-.project-table td:nth-child(3) a img{
-  height: 22px !important;   /* tamaño estable */
-  width: auto !important;    /* sin estirar */
-  max-width: 110px !important;
-}
-
-/* Responsivo tabla */
-@media (max-width: 480px){
-  .project-table th:nth-child(3),
-  .project-table td:nth-child(3){ width: 100px !important; }
-  .project-table td:nth-child(3) a img{ height: 20px !important; max-width: 96px !important; }
-}
-
-/* === Certificados: misma “píldora” verde y espaciado uniforme === */
-#certificados .cert-grid{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:12px !important;
-}
-#certificados .cert-grid a{
-  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
-  padding:.5rem .9rem; border-radius:10px;
-  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
-  min-width: 220px; text-align:center;
-  box-shadow:0 4px 6px rgba(0,0,0,.2);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-#certificados .cert-grid a:hover{
-  background:#2ea043; transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
-
-/* === Educación: botón “Ver diploma” con el mismo look === */
-.edu-btn-wrap .btn{
-  width: 220px; background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
-}
-.edu-btn-wrap .btn:hover{
-  background:#2ea043; transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
-
-/* === Footer: alineación limpia (izquierda en desktop, centro en móvil) === */
-footer p{
-  max-width: 980px; margin: .4rem auto; text-align: left;
-  line-height: 1.5;
-}
-@media (max-width:600px){
-  footer p{ text-align:center; }
-}
-/* === Certificados: ancho uniforme === */
-#certificados .cert-grid a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .45rem;
-  padding: .5rem .9rem;
-  border-radius: 10px;
-  background: #238636;
-  border: 1px solid #1f6f2e;
-  color: #fff;
-  font-weight: 700;
-  text-align: center;
-  min-width: 260px; /* ancho fijo mínimo */
-  max-width: 260px; /* ancho fijo máximo */
-  box-shadow: 0 4px 6px rgba(0,0,0,.2);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-
-#certificados .cert-grid a:hover {
-  background: #2ea043;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(46,160,67,.35);
-}
-
+  /* ========== FOOTER ========== */
+  .footer .container{
+    max-width:980px; margin:0 auto; padding:1.5rem; text-align:center;
+  }
+  .footer h2{ color: var(--accent); margin-top:0; }
+  .footer p{ color:#c9d1d9; line-height:1.5; margin:.3rem 0; }
+</style>
     
-  </style>
-</head>
 
+</head>
 <body>
   <div class="section">
     <header>
-      <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
+      <h1>👋 Hola, soy Héctor Alejandro Gaviria Marín.</h1>
       <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
 
       <div class="buttons">
-        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank" rel="noopener">📄 Descargar Hoja de Vida</a>
-        <a class="btn" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗 Ver mi LinkedIn</a>
+        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" download target="_blank" rel="noopener">📄 Descargar CV</a>
+        <a class="btn" href="https://linkedin.com/in/hector-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗LinkedIn</a>
         <a class="btn" href="https://github.com/agaviria-analytics" target="_blank" rel="noopener">🟢 Ver GitHub</a>
       </div>
       <p style="font-size:.85rem; margin-top:.5rem; color:#c9d1d9;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
@@ -298,106 +232,108 @@ footer p{
           <tr><th>Proyecto</th><th>Descripción</th><th>Repositorio</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Análisis con Power BI – Caso Appol</td>
-            <td>Dashboard profesional en Power BI con medidas DAX implícitas y explícitas, análisis de utilidad y margen por región, limpieza con Power Query y publicación web.</td>
-            <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td>✍️ Análisis de abastecimientos</td>
-            <td>Lenguaje de datos en Python + visualización con alertas y Power BI.</td>
-            <td><a href="https://github.com/agaviria-analytics/analisis-abastecimientos" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Análisis de Ventas con Power BI</td>
-            <td>Dashboard con modelo DAX para analizar ventas por producto, zona y tomar decisiones.</td>
-            <td><a href="https://github.com/agaviria-analytics/analisis-ventas-powerbi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Análisis de Ventas con Python + MySQL + Power BI</td>
-            <td>Conexión directa a MySQL, automatización con Python y visualización en Power BI.</td>
-            <td><a href="https://github.com/agaviria-analytics/ventas-bi-python-mysql" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td>📈 Análisis de Ventas DITO</td>
-            <td>Proyecto empresarial completo desde Python hasta Power BI.</td>
-            <td><a href="https://github.com/agaviria-analytics/analisis-ventas-DITO" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td>🗃️ Análisis de Ventas SQL Server + Power BI</td>
-            <td>Dashboard con modelo estrella y conexión a base de datos SQL Server.</td>
-            <td><a href="https://github.com/agaviria-analytics/ventas_sqlserver_bi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td>📊 Reporte Automatizado de Ventas (Python + Excel + Gráficas)</td>
-            <td>Simulación tipo SAP para análisis y visualización.</td>
-            <td><a href="https://github.com/agaviria-analytics/ventas-automatizadas" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">Consultas SQL de Abastecimiento</td>
-            <td>Diseño de base de datos, consultas JOIN, alertas y stock actual.</td>
-            <td><a href="https://github.com/agaviria-analytics/sql_consultas_join_abastecimiento" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td>🧘 Análisis Clima Laboral</td>
-            <td>Dashboard en Power BI con narrativa DAX para visualizar bienestar, estrés y satisfacción por área y género.</td>
-            <td><a href="https://github.com/agaviria-analytics/analisis_bienestar_empleados" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="excel.png" width="25" style="vertical-align:middle; margin-right:6px;">Dashboard de Ventas en Excel</td>
-            <td>Informe interactivo con segmentadores, KPIs, gráficos dinámicos y diseño profesional en Excel.</td>
-            <td><a href="https://github.com/agaviria-analytics/-Dashboard-de-Ventas-en-Excel" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="github.png" alt="GitHub Icon" width="28" style="vertical-align:middle; margin-right:6px;">Control de Versiones con Git & GitHub</td>
-            <td>Simulación de flujo Git real con ramas, commits profesional documentado en README.md.</td>
-            <td><a href="https://github.com/agaviria-analytics/versionado-limpieza-datos-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">SQL – Fundamentos (7 días)</td>
-            <td>Práctica intensiva en SQL Server: consultas, joins, transacciones, subconsultas, agrupaciones y respaldo de BD.</td>
-            <td><a href="https://github.com/agaviria-analytics/sql-fundamentos-7dias" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Power BI – Medidas-Columnas-Dashboards</td>
-            <td>Visualización profesional conectada a SQL Server: modelo estrella, medidas DAX, tabla calendario y narrativa visual.</td>
-            <td><a href="https://github.com/agaviria-analytics/powerbi-habilidades-analista-de-datos" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Curso Intensivo Python – 7 días</td>
-            <td>Aprendizaje estructurado en 7 días para dominar los fundamentos de Python con ejemplos y mini proyecto final.</td>
-            <td><a href="https://github.com/agaviria-analytics/curso-intensivo-python-7-dias" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="excel.png" width="22" style="vertical-align:middle; margin-right:6px;">Excel – Dashboard Ventas Autopartes</td>
-            <td>Dashboard en Excel con Power Query y Power Pivot. Carga optimizada desde archivos SAP, modelo estrella, medidas DAX y visualización profesional.</td>
-            <td><a href="https://github.com/agaviria-analytics/dashboard_excel_autopartes" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Python – Limpieza de Datos Excel</td>
-            <td>Práctica profesional de limpieza de archivos Excel sucios con Python. Incluye limpieza de texto, manejo de fechas con función robusta, tratamiento de nulos y visualización con matplotlib.</td>
-            <td><a href="https://github.com/agaviria-analytics/limpieza-datos-excel-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">SQL + Python + Excel + Power BI</td>
-            <td>Proyecto empresarial completo que integra SQL Server, Python, Excel y Power BI. Analiza ventas, automatiza cargas, genera visualizaciones y aplica buenas prácticas.</td>
-            <td><a href="https://github.com/agaviria-analytics/analisis-integrado-clientes-ventas" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Power BI – Dashboard de Entregas</td>
-            <td>Dashboard profesional desarrollado en Power BI para analizar entregas por conductor, tipo de vehículo y kilometraje. Incluye segmentadores personalizados y medidas DAX.</td>
-            <td><a href="https://github.com/agaviria-analytics/dashboard-entregas-logistica" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Python + Power BI – Dashboard Ventas de Tecnología</td>
-            <td>Limpieza profesional de datos de ventas en Excel usando Python: nombres, fechas, precios y textos tratados con scripts reutilizables. Incluye exportación estructurada y dashboard final en Power BI.</td>
-            <td><a href="https://github.com/agaviria-analytics/limpieza-ventas-tecnologia-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
-          <tr>
-            <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Python + Power BI – Automatización con glob</td>
-            <td>Proyecto profesional que automatiza la limpieza de múltiples archivos Excel usando <code>glob</code> en Python. Exporta archivos estructurados para análisis en Power BI con modelo estrella y medidas DAX.</td>
-            <td><a href="https://github.com/agaviria-analytics/automatizacion-archivos-excel-glob-powerbi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
-          </tr>
+              <tr>
+                <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Power BI – Caso Appol</td>
+                <td>Power BI con DAX, análisis por región y limpieza en Power Query.</td>
+                <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td>✍️ Abastecimientos</td>
+                <td>Python y Power BI con visualización y alertas.</td>
+                <td><a href="https://github.com/agaviria-analytics/analisis-abastecimientos" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Ventas Power BI</td>
+                <td>Power BI con DAX para ventas por producto y zona.</td>
+                <td><a href="https://github.com/agaviria-analytics/analisis-ventas-powerbi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Ventas Python + MySQL</td>
+                <td>Automatización en Python con MySQL y visualización en Power BI.</td>
+                <td><a href="https://github.com/agaviria-analytics/ventas-bi-python-mysql" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td>📈 Ventas DITO</td>
+                <td>Proyecto empresarial desde Python hasta Power BI.</td>
+                <td><a href="https://github.com/agaviria-analytics/analisis-ventas-DITO" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td>🗃️ Ventas SQL Server + Power BI</td>
+                <td>Power BI con modelo estrella conectado a SQL Server.</td>
+                <td><a href="https://github.com/agaviria-analytics/ventas_sqlserver_bi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td>📊 Reporte Ventas Python + Excel</td>
+                <td>Simulación tipo SAP para análisis y visualización.</td>
+                <td><a href="https://github.com/agaviria-analytics/ventas-automatizadas" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">SQL Abastecimiento</td>
+                <td>Base de datos, consultas JOIN, alertas y stock.</td>
+                <td><a href="https://github.com/agaviria-analytics/sql_consultas_join_abastecimiento" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td>🧘 Clima Laboral</td>
+                <td>Power BI con DAX para medir bienestar y satisfacción.</td>
+                <td><a href="https://github.com/agaviria-analytics/analisis_bienestar_empleados" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="excel.png" width="25" style="vertical-align:middle; margin-right:6px;">Ventas Excel</td>
+                <td>Excel interactivo con segmentadores, KPIs y gráficos.</td>
+                <td><a href="https://github.com/agaviria-analytics/-Dashboard-de-Ventas-en-Excel" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="github.png" width="28" style="vertical-align:middle; margin-right:6px;">Git & GitHub</td>
+                <td>Flujo Git con ramas, commits y documentación en README.</td>
+                <td><a href="https://github.com/agaviria-analytics/versionado-limpieza-datos-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">SQL Fundamentos</td>
+                <td>SQL Server con consultas, joins y transacciones.</td>
+                <td><a href="https://github.com/agaviria-analytics/sql-fundamentos-7dias" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Power BI – Habilidades</td>
+                <td>Power BI con modelo estrella, medidas DAX y narrativa visual.</td>
+                <td><a href="https://github.com/agaviria-analytics/powerbi-habilidades-analista-de-datos" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Python Intensivo</td>
+                <td>Fundamentos de Python en 7 días con ejemplos y proyecto.</td>
+                <td><a href="https://github.com/agaviria-analytics/curso-intensivo-python-7-dias" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="excel.png" width="22" style="vertical-align:middle; margin-right:6px;">Excel Autopartes</td>
+                <td>Excel con Power Query y Power Pivot para modelo estrella y DAX.</td>
+                <td><a href="https://github.com/agaviria-analytics/dashboard_excel_autopartes" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Python Limpieza Excel</td>
+                <td>Limpieza de Excel en Python: texto, fechas, nulos y visualización.</td>
+                <td><a href="https://github.com/agaviria-analytics/limpieza-datos-excel-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="SQL.png" width="25" style="vertical-align:middle; margin-right:6px;">Integración SQL + BI</td>
+                <td>SQL Server, Python, Excel y Power BI para análisis empresarial.</td>
+                <td><a href="https://github.com/agaviria-analytics/analisis-integrado-clientes-ventas" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Power BI – Entregas</td>
+                <td>Power BI para analizar entregas por conductor y kilometraje.</td>
+                <td><a href="https://github.com/agaviria-analytics/dashboard-entregas-logistica" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Ventas Tecnología</td>
+                <td>Limpieza de ventas en Excel con Python y dashboard en Power BI.</td>
+                <td><a href="https://github.com/agaviria-analytics/limpieza-ventas-tecnologia-python" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+            <tr>
+                <td><img src="Python.png" width="25" style="vertical-align:middle; margin-right:6px;">Automatización glob</td>
+                <td>Automatización de limpieza de Excel con glob en Python y análisis en Power BI.</td>
+                <td><a href="https://github.com/agaviria-analytics/automatizacion-archivos-excel-glob-powerbi" target="_blank" rel="noopener"><img class="repo-badge" src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+            </tr>
+
+
         </tbody>
       </table>
     </div>
