@@ -186,7 +186,40 @@
                       margin-left: 8px;
                       font-style: italic;
                     }
-                </style>
+                <style>
+                    /* Viñetas sin huecos: icono fijo y texto fluido */
+                    .clean-list{list-style:none; padding:0; margin:.4rem 0 0}
+                    .clean-list li{
+                      display:grid;
+                      grid-template-columns: 1.25rem 1fr; /* ancho fijo del icono */
+                      column-gap:.5rem;
+                      align-items:start;
+                      margin:.25rem 0;                      /* menos espacio vertical */
+                      line-height:1.55;                     /* consistente con párrafos */
+                      text-align:justify;
+                    }
+                    .li-icon{
+                      display:block;
+                      line-height:1.55;                     /* evita desalineo del emoji */
+                      text-align:center;
+                      opacity:.95;
+                      transform: translateY(.02rem);        /* microajuste vertical del emoji */
+                    }
+                  
+                    /* Separador compacto entre secciones */
+                    .divider{
+                      border:0; height:1px; background:#444;
+                      margin:.6rem 0;                       /* menor espacio */
+                    }
+                  
+                    /* Ajustes tipográficos coherentes */
+                    .bio-wrap p{margin:.45rem 0 0; line-height:1.55; text-align:justify;}
+                    .bio-wrap h2{margin:.4rem 0 .2rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center;}
+                    @media (max-width:480px){
+                      .bio-wrap p,.clean-list li{font-size:15.5px}
+                      .bio-wrap h2{font-size:1.04rem}
+                    }
+                  </style>
               </head>
               <body>
                 <div class="section"> <!-- NUEVO contenedor igual que las otras secciones -->
@@ -238,7 +271,7 @@
                         Participación en proyectos de automatización de reportes en Excel y SAP, mejorando
                         tiempos de gestión y calidad de los datos.
                       </p>
-                        <hr style="border: 0; height: 1px; background-color: #444; margin: 1rem 0;">
+                           <hr class="divider">
                       <!-- SOBRE MÍ -->
                       <h2>🙋‍♂️ Sobre mí</h2>
                       <p>
@@ -248,15 +281,15 @@
                         para optimizar reportes, automatizar tareas y crear visualizaciones útiles para la toma
                         de decisiones. Busco seguir creciendo en entornos dinámicos y colaborativos.
                       </p>
-                            <ul class="clean-list">
-                                <li><span class="li-icon">⚙</span>
-                                    <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
-                                <li><span class="li-icon">📊</span>
-                                    <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
-                                <li><span class="li-icon">🔗</span>
-                                    <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
-                              </ul>
-                        <hr style="border: 0; height: 1px; background-color: #444; margin: 1rem 0;">
+                      <ul class="clean-list">
+                            <li><span class="li-icon">⚙</span>
+                                <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
+                            <li><span class="li-icon">📊</span>
+                                <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
+                            <li><span class="li-icon">🔗</span>
+                                <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
+                          </ul>
+                          <hr class="divider">
                       </div>
                     </section>
               <section class="section">
