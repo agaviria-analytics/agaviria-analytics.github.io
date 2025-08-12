@@ -405,6 +405,25 @@ td.descripcion {
 @media (max-width:360px){
   .btn-diploma{ padding:3px 8px; font-size:.8rem; }
 }   
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* si no cabe en móvil, baja a segunda línea */
+}
+
+.btn-diploma {
+  background: #28a745;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.btn-diploma:hover {
+  background: #218838;
+}    
 </style>
 </head>
 <body>
@@ -608,13 +627,13 @@ td.descripcion {
     <h2>🎓 Formación Académica</h2>
     <ul class="edu-list">
       <li class="edu-item">
-        <span class="edu-title">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</span>
-        <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
-      </li>
-      <li class="edu-item">
-        <span class="edu-title">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</span>
-        <em class="edu-note">(Certificación en trámite)</em>
-      </li>
+          📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)
+          <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
+        </li>
+        <li class="edu-item">
+          📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)
+          <em class="edu-note">(Certificación en trámite)</em>
+        </li>
     </ul>
   </section>
 
