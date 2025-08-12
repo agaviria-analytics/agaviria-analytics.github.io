@@ -75,24 +75,29 @@
     .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
 
     /* ====== Tabla de proyectos (responsive sin “escala”) ====== */
-    .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
-    .project-table { width:100%; border-collapse:collapse; table-layout:auto; }
-    .project-table th, .project-table td { border:1px solid #30363d; padding:.75rem; text-align:left; white-space:nowrap; }
-    .project-table th { background-color:#21262d; color:#f0f0f0; }
-
-    @media (max-width: 480px) {
-      header h1{font-size:1.7rem}
-      header p{font-size:1rem}
-      .section{margin:1rem .5rem; padding:1rem}
-      .bio-wrap p, .clean-list li{font-size:15.5px}
-      .bio-wrap h2{font-size:1.04rem}
-      .project-table{table-layout:fixed}
-      .project-table th:nth-child(2),
-      .project-table td:nth-child(2){white-space:normal;}
-      .project-table th, .project-table td{padding:.5rem .55rem; line-height:1.4; font-size:14.5px;}
-      .project-table td:first-child img{width:18px}
-    }
-
+    .table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%}
+        .project-table{width:100%; border-collapse:collapse; table-layout:auto;}
+        .project-table th, .project-table td{
+          border:1px solid #30363d;
+          padding:.75rem;
+          text-align:left;
+          white-space:nowrap;
+          vertical-align: top;              /* 👈 contenido pegado arriba */
+        }
+      .project-table th{background:#21262d; color:#f0f0f0}
+      /* Mejor ajuste de la columna Descripción */
+      .project-table td:nth-child(2){word-break: break-word}
+ 
+    @media (max-width:480px){
+        .project-table{table-layout:fixed}
+        .project-table th, .project-table td{
+          white-space:normal;             /* 👈 deja que baje de línea */
+          padding:.5rem .55rem;
+          line-height:1.4;
+          font-size:14.5px;
+        }
+        .project-table td:first-child img{width:18px}
+      }
     /* ====== Educación / certificados ====== */
     .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
     .cert-btn {
@@ -171,15 +176,14 @@
   </div>
 
   <!-- PROYECTOS DESTACADOS -->
-  <section class="section">
-    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-      <div style="display:flex; align-items:center; gap:10px;">
-        <h2 style="margin:0; font-size:1.5rem;">📈 Proyectos Destacados</h2>
-        <img src="Python.png" alt="Python" style="height:26px;">
-        <img src="SQL.png" alt="SQL" style="height:26px;">
-        <img src="PowerBI.png" alt="Power BI" style="height:26px;">
-        <img src="Excel.png" alt="Excel" style="height:26px;">
-      </div>
+          <section class="section">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <h2 style="margin:0; font-size:1.5rem;">📈 Proyectos Destacados</h2>
+              <img src="Python.png" alt="Python" style="height:26px;">
+              <img src="SQL.png" alt="SQL" style="height:26px;">
+              <img src="PowerBI.png" alt="Power BI" style="height:26px;">
+              <img src="Excel.png" alt="Excel" style="height:26px;">
+            </div>
          <div class="table-scroll">
         <table class="project-table">
           <thead>
@@ -195,9 +199,8 @@
             <td>Dashboard profesional en Power BI con medidas DAX implícitas y explícitas, análisis de utilidad y margen por región, limpieza con Power Query y publicación web.</td>
             <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank"><img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
           </tr>
-          <tr>
              <tr>
-                      <td>✍️ Análisis de abastecimientos</td>
+             <td>✍️ Análisis de abastecimientos</td>
                       <td>Lenguaje de datos en Python + visualización con alertas y Power BI.</td>
                       <td><a href="https://github.com/agaviria-analytics/analisis-abastecimientos" target="_blank">
                          <img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub">
@@ -407,7 +410,7 @@
         </tbody>
       </table>
     </div>
-  </section>
+  </section>    
 <!-- EXPERIENCIA -->
  <section class="section">
     <h2>💼 Experiencia Profesional</h2>
