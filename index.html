@@ -118,6 +118,65 @@
     .footer .container{ max-width:980px; margin:0 auto; }
     .footer h2{ margin:0 0 .6rem; text-align:center; }
     .footer p{ margin:.4rem 0; color:#cbd5e1; line-height:1.45; text-align:center; }
+          /* ===== BOTONES (versión verde con hover “flotante”) ===== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:0.7rem 1.4rem;
+  font-size:1rem; line-height:1; font-weight:700;
+  border-radius:8px;
+  border:1px solid #1f6f2e;
+  background:#238636;            /* verde base */
+  color:#fff; text-decoration:none;
+  min-width:200px; text-align:center;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover{
+  background:#2ea043;            /* verde hover */
+  border-color:#1f6f2e;
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+.btn:active{
+  transform:translateY(0);
+  box-shadow:0 4px 10px rgba(46,160,67,.25);
+}
+
+/* Variaciones opcionales, por si las usas en otros lados */
+.btn--ghost{
+  background:transparent;
+  color:#e5e7eb;
+  border-color:#334155;
+}
+.btn--ghost:hover{
+  background:#1f2937;
+  transform:translateY(-2px);
+  box-shadow:0 8px 16px rgba(0,0,0,.25);
+}
+.btn--sm{ padding:.45rem .9rem; font-size:.95rem; min-width:unset; }
+
+/* Evitar que algún estilo viejo cambie tamaños en móvil */
+.btn, .btn * { transform: none; }
+
+/* ===== Certificados con look “píldora” verdes ===== */
+.cert-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+.cert-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+  padding:.5rem .9rem; border-radius:10px;
+  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
+  box-shadow:0 4px 6px rgba(0,0,0,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  min-width:220px; text-align:center;
+}
+.cert-btn:hover{
+  background:#2ea043;
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+
+/* Botón del contacto (si quieres igual al principal) */
+.section a.btn{ /* asegura que el de Contacto se vea igual */
+  background:#238636; border-color:#1f6f2e; color:#fff;
+}    
   </style>
 </head>
 
