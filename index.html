@@ -225,6 +225,30 @@ footer p{
 @media (max-width:600px){
   footer p{ text-align:center; }
 }
+/* === Certificados: ancho uniforme === */
+#certificados .cert-grid a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .5rem .9rem;
+  border-radius: 10px;
+  background: #238636;
+  border: 1px solid #1f6f2e;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  min-width: 260px; /* ancho fijo mínimo */
+  max-width: 260px; /* ancho fijo máximo */
+  box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+#certificados .cert-grid a:hover {
+  background: #2ea043;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(46,160,67,.35);
+}
 
     
   </style>
