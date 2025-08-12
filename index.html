@@ -38,7 +38,7 @@
 
     /* Misma anchura para los 3 botones del header */
     .buttons{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
-    .buttons .btn{ width:230px; }               /* <- ajusta 220–240 a gusto */
+    .buttons .btn{ width:220px; }               /* <- ajusta 220–240 a gusto */
     @media (max-width:480px){
       .buttons .btn{ width:100%; max-width:320px; }
       .btn, .btn *{ transform:none !important; } /* sin “salto” en móvil */
@@ -53,6 +53,28 @@
     header{ text-align:center; padding:1.5rem 1rem .5rem; }
     header h1{ font-size:2.2rem; margin:0 0 .4rem; }
     header p{ color:var(--muted); margin:.25rem 0 0; }
+    .buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  justify-content: center;
+}
+
+.buttons .btn {
+  width: 230px; /* mismo ancho para todos */
+}
+
+@media (max-width: 480px) {
+  .buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn, .btn * {
+    transform: none !important;
+  }
+}
+    
   </style>
 </head>
 
