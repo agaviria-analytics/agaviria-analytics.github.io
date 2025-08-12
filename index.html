@@ -290,9 +290,69 @@
   padding:.45rem .75rem !important;
   font-size:.95rem !important;
 }  
-</style>
-    
+/* === PROYECTOS: móvil vertical, mostrar más texto === */
+@media (max-width: 480px){
+  .project-table td:nth-child(2){
+    font-size: .98rem !important;
+    line-height: 1.35 !important;
+    -webkit-line-clamp: 5 !important;   /* antes 3-4 */
+    min-height: unset !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+  .project-table td{ padding: 10px 8px !important; }
+}
 
+/* === HEADER: botones un poco más pequeños === */
+.buttons .btn{
+  width: 170px !important;
+  padding: .55rem .9rem !important;
+  font-size: .95rem !important;
+}
+@media (max-width:480px){
+  .buttons .btn{ max-width: 240px !important; }
+}
+
+/* === BLOG: más separación entre renglones === */
+.section ul[style*="list-style:none"]{
+  gap: .7rem !important;
+}
+.section ul[style*="list-style:none"] li{
+  margin-bottom: .35rem !important;
+}
+
+/* === FOOTER: justificar texto (no centrado) === */
+.footer .container{
+  text-align: left !important;
+}
+.footer p{
+  text-align: justify !important;
+  text-justify: inter-word;
+  margin: .5rem 0 !important;
+}
+
+/* === FORMACIÓN: "Ver diploma" a la izquierda, junto al título === */
+.edu-item{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;   /* <- alinea a la izquierda */
+  gap: .75rem !important;
+  flex-wrap: wrap;                           /* en móvil se apila bonito */
+}
+.edu-title{ flex: 0 1 auto !important; }
+.edu-btn-wrap{
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  margin-left: .8rem !important;             /* pequeño espacio al lado del texto */
+}
+@media (max-width:640px){
+  .edu-btn-wrap{ margin-left: 0 !important; }
+}    
+.bio-wrap p,
+.bio-wrap li {
+  text-align: justify;
+}    
+</style>
 </head>
 <body>
   <div class="section">
@@ -301,7 +361,8 @@
       <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
 
       <div class="buttons">
-        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" download target="_blank" rel="noopener">📄 Descargar CV</a>
+        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank" rel="noopener">📄 Ver CV</a>
+        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" download target="_blank" rel="noopener">📥 Descargar CV</a>
         <a class="btn" href="www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗LinkedIn</a>
         <a class="btn" href="https://github.com/agaviria-analytics" target="_blank" rel="noopener">🟢 Ver GitHub</a>
       </div>
