@@ -184,6 +184,58 @@
   }
   .footer h2{ color: var(--accent); margin-top:0; }
   .footer p{ color:#c9d1d9; line-height:1.5; margin:.3rem 0; }
+
+  /* === 1) Tabla: quitar hueco antes de "Repositorio" === */
+.project-table{ table-layout:auto !important; }  /* deja que el ancho lo decida el contenido */
+.project-table th:nth-child(1), .project-table td:nth-child(1){ width:34%; }
+.project-table th:nth-child(2), .project-table td:nth-child(2){
+  width:56%;
+  max-width:none;                 /* sin límite duro que generaba el hueco */
+}
+.project-table th:nth-child(3), .project-table td:nth-child(3){
+  width:10%;
+  min-width:120px;                /* ancho estable para el badge */
+}
+
+/* En desktop acortamos un poco las descripciones (2 líneas) */
+@media (min-width: 769px){
+  .project-table td:nth-child(2){ -webkit-line-clamp:2; }
+}
+
+/* === 2) Header: botones más pequeños === */
+.buttons .btn{
+  width:180px !important;
+  padding:.6rem 1rem !important;
+  font-size:.95rem !important;
+}
+@media (max-width:480px){
+  .buttons .btn{ max-width:260px !important; }
+}
+
+/* === 3) Certificados: chips más compactos y parejos === */
+#certificados .cert-grid a{
+  min-width:200px !important;
+  max-width:220px !important;
+  padding:.45rem .8rem !important;
+  font-size:.95rem !important;
+}
+
+/* === 4) Educación: "Ver diploma" alineado al lado del título === */
+.edu-item{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:.75rem !important;
+  flex-wrap:nowrap !important;          /* que no se vaya al fondo en desktop */
+}
+.edu-title{ flex:1 1 auto !important; }
+.edu-btn-wrap{ flex:0 0 auto !important; white-space:nowrap; }
+
+@media (max-width:640px){
+  .edu-item{ flex-wrap:wrap !important; }   /* en móvil sí se apila limpio */
+  .edu-btn-wrap{ width:auto; margin-top:.4rem; }
+}
+  
 </style>
     
 
@@ -407,12 +459,12 @@
     <h2 style="text-align:center;">🎓 Certificados Destacados</h2>
     <p style="text-align:center; margin-bottom:1.2rem; color:var(--muted);">Certificados que respaldan mi formación en análisis de datos y herramientas clave:</p>
     <div class="cert-grid">
-      <a class="cert-chip" href="./google-analisis-datos.pdf" target="_blank" rel="noopener">📄 Google – Análisis de Datos</a>
-      <a class="cert-chip" href="./powerbi-dax.pdf" target="_blank" rel="noopener">📄 Power BI + DAX</a>
-      <a class="cert-chip" href="./sql-basico.pdf" target="_blank" rel="noopener">📄 SQL – Base de Datos</a>
-      <a class="cert-chip" href="./python-analisis.pdf" target="_blank" rel="noopener">📄 Python para Análisis</a>
+      <a class="cert-chip" href="./google-analisis-datos.pdf" target="_blank" rel="noopener">📄 Google–Análisis de Datos</a>
+      <a class="cert-chip" href="./powerbi-dax.pdf" target="_blank" rel="noopener">📄 Power BI+DAX</a>
+      <a class="cert-chip" href="./sql-basico.pdf" target="_blank" rel="noopener">📄 SQL – BD</a>
+      <a class="cert-chip" href="./python-analisis.pdf" target="_blank" rel="noopener">📄 Python</a>
       <a class="cert-chip" href="./excel-avanzado.pdf" target="_blank" rel="noopener">📄 Excel Avanzado</a>
-      <a class="cert-chip" href="./powerbi-complementario.pdf" target="_blank" rel="noopener">📄 Power BI (Complementario)</a>
+      <a class="cert-chip" href="./powerbi-complementario.pdf" target="_blank" rel="noopener">📄 Power BI</a>
     </div>
   </section>
 
