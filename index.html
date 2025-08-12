@@ -12,111 +12,177 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="favicon.png" />
+      <style>
+  /* ====== Base ====== */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d1117;
+    color: #f0f0f0;
+    line-height: 1.6;
+  }
+  a { color: #58a6ff; text-decoration: none; }
 
-  <style>
-    /* ====== Base ====== */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #f0f0f0;
-      line-height: 1.6;
+  /* ====== Header / CTA ====== */
+  header { text-align: center; padding: 2rem 1rem 1rem; }
+  header h1 { font-size: 2.5rem; color: #fff; margin: 0; }
+  header p { font-size: 1.1rem; color: #c9d1d9; margin: .5rem 0 0; }
+  .buttons { text-align: center; margin-top: 1rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background-color: #238636;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    min-width: 200px;
+    text-align: center;
+    transition: all .2s ease;
+  }
+  .btn:hover { background-color: #2ea043; box-shadow: 0 0 12px rgba(46,160,67,.6); transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); box-shadow: 0 0 5px rgba(46,160,67,.4); }
+
+  /* ====== Secciones ====== */
+  .section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #161b22;
+    border-radius: 10px;
+  }
+  .section h2 { color: #58a6ff; margin: 0 0 1rem; }
+  .divider { border:0; height:1px; background:#444; margin:.6rem 0; }
+
+  /* ====== BIO (perfil + sobre mí) ====== */
+  .bio-wrap { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
+  .bio-wrap p { margin:.45rem 0 0; line-height:1.55; text-align: justify; }
+  .bio-wrap h2 { margin:.5rem 0 .25rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center; }
+  .kws { font-weight: 700; }
+
+  /* Lista limpia con icono + texto */
+  .clean-list { list-style: none; padding: 0; margin:.35rem 0 0; }
+  .clean-list li {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    column-gap: .5rem;
+    align-items: start;
+    margin: .25rem 0;
+    line-height: 1.55;
+    text-align: justify;
+  }
+  .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
+
+  /* ====== Tabla de proyectos ====== */
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
+
+  .project-table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;                /* ← control de anchos por columna */
+  }
+
+  .project-table th, .project-table td{
+    border:1px solid #30363d;
+    padding:.7rem .75rem;
+    text-align:left;
+    vertical-align: top;               /* contenido pegado arriba */
+    line-height:1.35;                  /* filas más compactas */
+  }
+
+  .project-table th{ background:#21262d; color:#f0f0f0 }
+
+  /* —— Anchos por columna (Desktop) —— */
+  .project-table th:nth-child(1),
+  .project-table td:nth-child(1){ width:28%; }
+
+  .project-table th:nth-child(2),
+  .project-table td:nth-child(2){ width:57%; }
+
+  .project-table th:nth-child(3),
+  .project-table td:nth-child(3){ width:15%; text-align:center; white-space:nowrap; }
+
+  /* —— Comportamiento de texto —— */
+  /* Proyecto: permite varias líneas sin desbordar */
+  .project-table td:nth-child(1){
+    white-space:normal;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  /* Descripción: justificada y limpia */
+  .project-table td:nth-child(2){
+    white-space:normal;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    text-align:justify;
+  }
+
+  /* ====== Responsive ====== */
+  @media (max-width: 768px){
+    .project-table th, .project-table td{
+      padding:.55rem .6rem;
+      font-size:15px;
     }
-    a { color: #58a6ff; text-decoration: none; }
 
-    /* ====== Header / CTA ====== */
-    header { text-align: center; padding: 2rem 1rem 1rem; }
-    header h1 { font-size: 2.5rem; color: #fff; margin: 0; }
-    header p { font-size: 1.1rem; color: #c9d1d9; margin: .5rem 0 0; }
-    .buttons { text-align: center; margin-top: 1rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.4rem;
-      background-color: #238636;
-      color: #fff;
-      border-radius: 8px;
-      font-weight: bold;
-      min-width: 200px;
-      text-align: center;
-      transition: all .2s ease;
+    /* Rebalanceo de anchos en tablet/móvil */
+    .project-table th:nth-child(1),
+    .project-table td:nth-child(1){ width:34%; }
+
+    .project-table th:nth-child(2),
+    .project-table td:nth-child(2){ width:54%; }
+
+    .project-table th:nth-child(3),
+    .project-table td:nth-child(3){ width:12%; }
+  }
+
+  @media (max-width: 480px){
+    .project-table th, .project-table td{
+      padding:.5rem .55rem;
+      font-size:14.5px;
+      line-height:1.32;
     }
-    .btn:hover { background-color: #2ea043; box-shadow: 0 0 12px rgba(46,160,67,.6); transform: translateY(-2px); }
-    .btn:active { transform: translateY(0); box-shadow: 0 0 5px rgba(46,160,67,.4); }
 
-    /* ====== Secciones ====== */
-    .section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #161b22;
-      border-radius: 10px;
+    /* Móvil: Proyecto más angosto, botón visible */
+    .project-table th:nth-child(1),
+    .project-table td:nth-child(1){ width:36%; }
+
+    .project-table th:nth-child(2),
+    .project-table td:nth-child(2){ width:56%; }
+
+    .project-table th:nth-child(3),
+    .project-table td:nth-child(3){ width:8%;  }
+
+    /* Opcional: limitar altura visual de la descripción (sin romper layout) */
+    /* Descomenta si la fila se hace MUY alta y quieres recortar a 8 líneas
+    .project-table td:nth-child(2){
+      display:-webkit-box;
+      -webkit-line-clamp:8;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
     }
-    .section h2 { color: #58a6ff; margin: 0 0 1rem; }
-    .divider { border:0; height:1px; background:#444; margin:.6rem 0; }
+    */
+  }
 
-    /* ====== BIO (perfil + sobre mí) ====== */
-    .bio-wrap { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
-    .bio-wrap p { margin:.45rem 0 0; line-height:1.55; text-align: justify; }
-    .bio-wrap h2 { margin:.5rem 0 .25rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center; }
-    .kws { font-weight: 700; }
+  /* ====== Educación / certificados ====== */
+  .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+  .cert-btn {
+    background-color:#28a745; color:#fff; border:none; padding:10px 16px; border-radius:6px;
+    font-size:14px; min-width:220px; text-align:center; display:inline-block;
+    box-shadow:0 4px 6px rgba(0,0,0,.2); transition: background-color .2s ease;
+  }
+  .cert-btn:hover { background-color:#218838; }
 
-    /* Lista limpia con icono + texto */
-    .clean-list { list-style: none; padding: 0; margin:.35rem 0 0; }
-    .clean-list li {
-      display: grid;
-      grid-template-columns: 1.25rem 1fr;
-      column-gap: .5rem;
-      align-items: start;
-      margin: .25rem 0;
-      line-height: 1.55;
-      text-align: justify;
-    }
-    .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
-
-    /* ====== Tabla de proyectos (responsive sin “escala”) ====== */
-    .table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%}
-        .project-table{width:100%; border-collapse:collapse; table-layout:auto;}
-        .project-table th, .project-table td{
-          border:1px solid #30363d;
-          padding:.75rem;
-          text-align:left;
-          white-space:nowrap;
-          vertical-align: top;              /* 👈 contenido pegado arriba */
-        }
-      .project-table th{background:#21262d; color:#f0f0f0}
-      /* Mejor ajuste de la columna Descripción */
-      .project-table td:nth-child(2){word-break: break-word}
- 
-    @media (max-width:480px){
-        .project-table{table-layout:fixed}
-        .project-table th, .project-table td{
-          white-space:normal;             /* 👈 deja que baje de línea */
-          padding:.5rem .55rem;
-          line-height:1.4;
-          font-size:14.5px;
-        }
-        .project-table td:first-child img{width:18px}
-      }
-    /* ====== Educación / certificados ====== */
-    .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
-    .cert-btn {
-      background-color:#28a745; color:#fff; border:none; padding:10px 16px; border-radius:6px;
-      font-size:14px; min-width:220px; text-align:center; display:inline-block;
-      box-shadow:0 4px 6px rgba(0,0,0,.2); transition: background-color .2s ease;
-    }
-    .cert-btn:hover { background-color:#218838; }
-
-    .edu-list{margin:0; padding:0; list-style:none;}
-    .edu-item{display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px;}
-    .edu-title{line-height:1.35;}
-    .edu-btn-wrap{margin-left:12px;}
-    .edu-note{color:#c9d1d9; margin-left:8px; font-style:italic;}
-    @media (max-width:768px){
-      .edu-item{flex-direction:column; align-items:center; text-align:center;}
-      .edu-btn-wrap{margin-left:0; margin-top:6px;}
-    }
-  </style>
+  .edu-list{margin:0; padding:0; list-style:none;}
+  .edu-item{display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px;}
+  .edu-title{line-height:1.35;}
+  .edu-btn-wrap{margin-left:12px;}
+  .edu-note{color:#c9d1d9; margin-left:8px; font-style:italic;}
+  @media (max-width:768px){
+    .edu-item{flex-direction:column; align-items:center; text-align:center;}
+    .edu-btn-wrap{margin-left:0; margin-top:6px;}
+  }
+</style>  
 </head>
 <body>
   <div class="section">
