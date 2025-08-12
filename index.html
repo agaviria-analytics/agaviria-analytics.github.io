@@ -79,14 +79,18 @@
     .project-table { width:100%; border-collapse:collapse; table-layout:auto; }
     .project-table th, .project-table td { border:1px solid #30363d; padding:.75rem; text-align:left; white-space:nowrap; }
     .project-table th { background-color:#21262d; color:#f0f0f0; }
-    /* permite que la columna Descripción rompa línea en móvil */
+
     @media (max-width: 480px) {
       header h1{font-size:1.7rem}
       header p{font-size:1rem}
       .section{margin:1rem .5rem; padding:1rem}
       .bio-wrap p, .clean-list li{font-size:15.5px}
       .bio-wrap h2{font-size:1.04rem}
-      .project-table th:nth-child(2), .project-table td:nth-child(2){white-space:normal;}
+      .project-table{table-layout:fixed}
+      .project-table th:nth-child(2),
+      .project-table td:nth-child(2){white-space:normal;}
+      .project-table th, .project-table td{padding:.5rem .55rem; line-height:1.4; font-size:14.5px;}
+      .project-table td:first-child img{width:18px}
     }
 
     /* ====== Educación / certificados ====== */
@@ -109,7 +113,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="section">
     <header>
