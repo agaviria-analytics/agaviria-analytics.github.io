@@ -74,6 +74,81 @@
     transform: none !important;
   }
 }
+              /* === 1) Header: mismo ancho en los 3 botones === */
+.buttons{
+  margin-top:1rem;
+  display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center;
+}
+.buttons .btn{
+  width:230px;                 /* igual ancho para los 3 */
+}
+@media (max-width:480px){
+  .buttons .btn{ width:100%; max-width:320px; }
+  .btn, .btn *{ transform:none !important; }  /* sin “saltitos” en móvil */
+}
+
+/* === 2) Tabla Proyectos: columna Repositorio ordenada === */
+.project-table th:nth-child(3),
+.project-table td:nth-child(3){
+  width:120px;                 /* un poco más ancha para el badge */
+  text-align:center;
+  white-space:nowrap;
+  padding-left:.45rem; padding-right:.45rem;
+}
+.project-table td:nth-child(3) a img{
+  height:24px;                 /* compacta el shield */
+  max-width:110px;
+  display:inline-block;
+}
+@media (max-width:480px){
+  .project-table th:nth-child(3),
+  .project-table td:nth-child(3){ width:100px; }
+  .project-table td:nth-child(3) a img{ height:22px; max-width:96px; }
+}
+
+/* === 3) Certificados: mismos “píldora” verdes que el header === */
+#certificados .cert-grid a{
+  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+  padding:.5rem .9rem; border-radius:10px;
+  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
+  min-width:220px; text-align:center;
+  box-shadow:0 4px 6px rgba(0,0,0,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+#certificados .cert-grid a:hover{
+  background:#2ea043;
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+
+/* === 4) Educación: “Ver diploma” con el mismo look verde === */
+.edu-btn-wrap .btn{
+  width:220px;
+  background:#238636; border:1px solid #1f6f2e; color:#fff;
+  font-weight:700;
+}
+.edu-btn-wrap .btn:hover{
+  background:#2ea043; transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(46,160,67,.35);
+}
+
+/* === 5) Blog: lista alineada y limpia (sin inline-styles) === */
+.section ul[style*="list-style:none"]{
+  padding:0 !important; list-style:none !important; margin:0;
+  display:grid; gap:.5rem;
+}
+.section ul[style*="list-style:none"] li{
+  display:grid; grid-template-columns:22px 1fr; align-items:start; column-gap:.5rem;
+}
+.section ul[style*="list-style:none"] li > span{
+  text-align:center; width:22px !important; display:inline-block !important;
+}
+
+/* === 6) Footer: texto justificado === */
+footer p{
+  text-align:justify; text-justify:inter-word;
+}
+
     
   </style>
 </head>
