@@ -235,7 +235,61 @@
   .edu-item{ flex-wrap:wrap !important; }   /* en móvil sí se apila limpio */
   .edu-btn-wrap{ width:auto; margin-top:.4rem; }
 }
-  
+    /* === FIX 1: Tabla sin hueco y columnas naturales === */
+.project-table{ table-layout:auto !important; width:100%; }
+.project-table th, .project-table td{ vertical-align:middle; }
+
+/* Quita el tope de 320px que dejaba un hueco enorme */
+.project-table td:nth-child(2){
+  max-width:none !important;   /* <- clave para quitar el espacio */
+  width:auto !important;
+  -webkit-line-clamp: 3;       /* sigue truncando líneas */
+}
+
+/* Columna Repositorio: que encoja al contenido */
+.project-table th:nth-child(3),
+.project-table td:nth-child(3){
+  width:1% !important;         /* se ajusta al mínimo posible */
+  white-space:nowrap !important;
+}
+
+/* === FIX 2: Badge de GitHub sin distorsión === */
+.project-table td:nth-child(3) a{
+  display:inline-flex !important; align-items:center; justify-content:center;
+}
+.project-table td:nth-child(3) a img{
+  height:auto !important;
+  max-height:24px !important;  /* limite alto, sin aplastar */
+  width:auto !important;       /* que use su ancho natural */
+  max-width:none !important;   /* sin recortes */
+}
+
+/* === FIX 3: "Ver diploma" alineado junto al título === */
+.edu-list{ list-style:none; padding:0; margin:0; display:grid; gap:.8rem; }
+.edu-item{ display:flex !important; align-items:center !important; justify-content:space-between !important; gap:.75rem; }
+.edu-title{ flex:1 1 auto !important; }
+.edu-btn-wrap{ flex:0 0 auto !important; white-space:nowrap !important; }
+
+/* En móvil, que se apile bonito */
+@media (max-width:640px){
+  .edu-item{ flex-wrap:wrap !important; }
+  .edu-btn-wrap{ width:auto; margin-top:.4rem; }
+}
+
+/* === Opcional: botones del header un poco más compactos === */
+.buttons .btn{
+  width:180px !important;
+  padding:.55rem .9rem !important;
+  font-size:.95rem !important;
+}
+
+/* === Opcional: certificados más pequeños para que alineen mejor === */
+#certificados .cert-grid a{
+  min-width:190px !important;
+  max-width:210px !important;
+  padding:.45rem .75rem !important;
+  font-size:.95rem !important;
+}  
 </style>
     
 
@@ -248,7 +302,7 @@
 
       <div class="buttons">
         <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" download target="_blank" rel="noopener">📄 Descargar CV</a>
-        <a class="btn" href="https://linkedin.com/in/hector-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗LinkedIn</a>
+        <a class="btn" href="www.linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗LinkedIn</a>
         <a class="btn" href="https://github.com/agaviria-analytics" target="_blank" rel="noopener">🟢 Ver GitHub</a>
       </div>
       <p style="font-size:.85rem; margin-top:.5rem; color:#c9d1d9;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
