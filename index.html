@@ -1,297 +1,175 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alejandro G. | Analista de Datos</title>
-  <!-- Etiquetas Open Graph y Twitter Card -->
-  <meta property="og:title" content="Portafolio Héctor Alejandro Gaviria Marín">
-  <meta property="og:description" content="Proyectos de análisis de datos con Python, SQL, Power BI, Excel y más.">
-  <meta property="og:image" content="https://agaviria-analytics.github.io/img/preview-portafolio.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
-    .btn:hover {
-      background-color: #2ea043;
-      box-shadow: 0 0 12px rgba(46, 160, 67, 0.6);
-      transform: translateY(-2px);
-      transition: all 0.3s ease;
-    }
-    .btn:active {
-      transform: translateY(0);
-      box-shadow: 0 0 5px rgba(46, 160, 67, 0.4);
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #c9d1d9;
-    }
-    .buttons {
-      text-align: center;
-      margin-top: 1.5rem;
-    }
-    .btn {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.7rem 1.4rem;
-      background-color: #238636;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #161b22;
-      border-radius: 10px;
-    }
-    .section h2 {
-      color: #58a6ff;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    ul li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-    ul li span {
-      margin-right: 0.5rem;
-    }
-    .project-table {
-      width: 100%;
-      min-width: 600px;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    .project-table th, .project-table td {
-      border: 1px solid #30363d;
-      padding: 0.75rem;
-      text-align: left;
-    }
-    .project-table th {
-      background-color: #21262d;
-      color: #f0f0f0;
-    }
-    a {
-      color: #58a6ff;
-    }
-    .cert-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-    .cert-btn {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      min-width: 220px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-    .cert-btn:hover {
-      background-color: #218838;
-    }
-              /* Variante pequeña del botón principal */
-          .btn-sm {
-            padding: 0.45rem 0.9rem;
-            font-size: 0.85rem;
-            border-radius: 12px;
-          }
+          <!DOCTYPE html>
+          <html lang="es">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Alejandro G. | Analista de Datos</title>
           
-          /* Contenedor de ícono dentro del botón */
-          .btn .icon {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 8px;
-          }
-      /* Lista de educación */
-            .edu-list {
+            <!-- Open Graph / Twitter -->
+            <meta property="og:title" content="Portafolio Héctor Alejandro Gaviria Marín" />
+            <meta property="og:description" content="Proyectos de análisis de datos con Python, SQL, Power BI, Excel y más." />
+            <meta property="og:image" content="https://agaviria-analytics.github.io/img/preview-portafolio.png" />
+            <meta property="og:type" content="website" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <link rel="icon" type="image/png" href="favicon.png" />
+          
+            <style>
+              /* ====== Base ====== */
+              * { box-sizing: border-box; }
+              body {
                 margin: 0;
-                padding: 0;
-                list-style: none;
+                font-family: 'Segoe UI', sans-serif;
+                background-color: #0d1117;
+                color: #f0f0f0;
+                line-height: 1.6;
               }
-            /* Item inline: botón al lado del título en desktop */
-              .edu-item {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                margin-bottom: 12px;
+              a { color: #58a6ff; }
+          
+              /* ====== Header / CTA ====== */
+              header { text-align: center; padding: 2rem 1rem 1rem; }
+              header h1 { font-size: 2.5rem; color: #fff; margin: 0; }
+              header p { font-size: 1.1rem; color: #c9d1d9; margin:.5rem 0 0; }
+              .buttons { text-align: center; margin-top: 1rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+              .btn {
+                display: inline-block;
+                padding: 0.7rem 1.4rem;
+                background-color: #238636;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: bold;
+                min-width: 200px;
+                text-align: center;
+                transition: all .2s ease;
               }
-              .edu-title{
-                line-height:1.35;
+              .btn:hover { background-color: #2ea043; box-shadow: 0 0 12px rgba(46,160,67,.6); transform: translateY(-2px); }
+              .btn:active { transform: translateY(0); box-shadow: 0 0 5px rgba(46,160,67,.4); }
+          
+              /* ====== Secciones ====== */
+              .section {
+                max-width: 900px;
+                margin: 2rem auto;
+                padding: 1.5rem;
+                background-color: #161b22;
+                border-radius: 10px;
               }
-              .edu-btn-wrap{
-                margin-left:12px; 
+              .section h2 { color: #58a6ff; margin: 0 0 1rem; }
+              .divider { border:0; height:1px; background:#444; margin:.6rem 0; }
+          
+              /* ====== BIO (perfil + sobre mí) ====== */
+              .bio-wrap { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
+              .bio-wrap p { margin:.45rem 0 0; line-height:1.55; text-align: justify; }
+              .bio-wrap h2 { margin:.5rem 0 .25rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center; }
+              .kws { font-weight: 700; }
+          
+              /* Lista sin huecos (icono fijo + texto fluido) */
+              .clean-list { list-style: none; padding: 0; margin:.35rem 0 0; }
+              .clean-list li {
+                display: grid;
+                grid-template-columns: 1.25rem 1fr;
+                column-gap: .5rem;
+                align-items: start;
+                margin: .25rem 0;
+                line-height: 1.55;
+                text-align: justify;
               }
-              /* Botón pequeño */
-                  .btn-sm {
-                    padding: 0.45rem 0.9rem;
-                    font-size: 0.85rem;
-                    border-radius: 12px;
-                  }
-                    .btn .icon {
-                  width: 20px;
-                  height: 20px;
-                  object-fit: contain;
-                  display: inline-block;
-                  vertical-align: middle;
-                  margin-right: 8px;
-                }
-                  /* Móvil: botón debajo y centrado */
-                  @media (max-width: 768px) {
-                    .edu-item {
-                      flex-direction: column;
-                      align-items: center; /* centra horizontalmente */
-                      text-align: center; /* centra texto y botón */
-                    }
-                   .edu-btn-wrap {
-                      margin-left: 0;
-                      margin-top: 6px;
-                    }
-                  }
-                    .edu-note {
-                      color: #c9d1d9;
-                      margin-left: 8px;
-                      font-style: italic;
-                    }
-                <style>
-                    /* Viñetas sin huecos: icono fijo y texto fluido */
-                    .clean-list{list-style:none; padding:0; margin:.4rem 0 0}
-                    .clean-list li{
-                      display:grid;
-                      grid-template-columns: 1.25rem 1fr; /* ancho fijo del icono */
-                      column-gap:.5rem;
-                      align-items:start;
-                      margin:.25rem 0;                      /* menos espacio vertical */
-                      line-height:1.55;                     /* consistente con párrafos */
-                      text-align:justify;
-                    }
-                    .li-icon{
-                      display:block;
-                      line-height:1.55;                     /* evita desalineo del emoji */
-                      text-align:center;
-                      opacity:.95;
-                      transform: translateY(.02rem);        /* microajuste vertical del emoji */
-                    }
-                  
-                    /* Separador compacto entre secciones */
-                    .divider{
-                      border:0; height:1px; background:#444;
-                      margin:.6rem 0;                       /* menor espacio */
-                    }
-                  
-                    /* Ajustes tipográficos coherentes */
-                    .bio-wrap p{margin:.45rem 0 0; line-height:1.55; text-align:justify;}
-                    .bio-wrap h2{margin:.4rem 0 .2rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center;}
-                    @media (max-width:480px){
-                      .bio-wrap p,.clean-list li{font-size:15.5px}
-                      .bio-wrap h2{font-size:1.04rem}
-                    }
-                  </style>
-              </head>
-              <body>
-                <div class="section"> <!-- NUEVO contenedor igual que las otras secciones -->
-                  <header style="text-align: center;">
-                    <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
-                    <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
-              
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem;">
-                      <a class="btn" style="min-width: 200px; text-align: center;" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
-                      <a class="btn" style="min-width: 200px; text-align: center;" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
-                      <a class="btn" style="min-width: 200px; text-align: center;" href="https://github.com/agaviria-analytics" target="_blank">🟢 Ver GitHub</a>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">
-                      *El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*
-                     </p>
-                    <style>
-                      /* --- Tipografía y espaciado --- */
-                      .bio-wrap{max-width:700px;margin:0 auto;padding:0 1rem;}
-                      .bio-wrap p{margin:.5rem 0 0 0; line-height:1.6; text-align:justify;}
-                      .bio-wrap h2{margin:.75rem 0 .25rem; font-size:1.1rem; display:flex; gap:.5rem; align-items:center;}
-                      .bio-wrap .lead{font-weight:600;}
-                      .bio-wrap .kws{font-weight:700;}
-                    
-                      /* --- Lista con icono a la izquierda --- */
-                      .clean-list{list-style:none; padding:0; margin:.5rem 0 0;}
-                      .clean-list li{display:flex; align-items:flex-start; gap:.5rem; margin:.4rem 0; text-align:justify;}
-                      .li-icon{min-width:1.2rem; line-height:1.6; text-align:center; opacity:.9;}
-                    
-                      /* --- Ajustes móviles --- */
-                      @media (max-width:480px){
-                        .bio-wrap p, .clean-list li{font-size:15.5px;}
-                        .bio-wrap h2{font-size:1.05rem;}
-                      }
-                    </style>
-                    
-                    <div class="bio-wrap">
-                      <!-- PERFIL -->
-                      <h2>🎯 Analista de Datos Junior</h2>
-                      <p class="lead">
-                        Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.
-                        Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.
-                      </p>
-                      <p>
-                        Experiencia en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>,
-                        <span class="kws">SQL (consultas y joins)</span> y
-                        <span class="kws">Python (pandas, limpieza y visualización de datos)</span>,
-                        aplicados a la creación de dashboards e indicadores.
-                      </p>
-                      <p>
-                        Participación en proyectos de automatización de reportes en Excel y SAP, mejorando
-                        tiempos de gestión y calidad de los datos.
-                      </p>
-                           <hr class="divider">
-                      <!-- SOBRE MÍ -->
-                      <h2>🙋‍♂️ Sobre mí</h2>
-                      <p>
-                        Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.
-                        Mi trayectoria en logística y operaciones me dio una base sólida para entender procesos
-                        empresariales. Hoy la complemento con <span class="kws">Power BI, Excel, Python y SQL</span>
-                        para optimizar reportes, automatizar tareas y crear visualizaciones útiles para la toma
-                        de decisiones. Busco seguir creciendo en entornos dinámicos y colaborativos.
-                      </p>
-                      <ul class="clean-list">
-                            <li><span class="li-icon">⚙</span>
-                                <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
-                            <li><span class="li-icon">📊</span>
-                                <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
-                            <li><span class="li-icon">🔗</span>
-                                <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
-                          </ul>
-                          <hr class="divider">
-                      </div>
-                    </section>
+              .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
+          
+              /* ====== Tabla de proyectos (responsive) ====== */
+              .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
+              .project-table { width:100%; border-collapse:collapse; table-layout:auto; } /* sin min-width */
+              .project-table th, .project-table td {
+                border: 1px solid #30363d; padding: .75rem; text-align: left; white-space: nowrap;
+              }
+              .project-table th { background-color: #21262d; color: #f0f0f0; }
+              /* Deja que la columna Descripción pueda romper línea en móvil */
+              @media (max-width:480px){
+                header h1{font-size:1.7rem}
+                header p{font-size:1rem}
+                .section{margin:1rem .5rem; padding:1rem}
+                .bio-wrap p, .clean-list li{font-size:15.5px}
+                .bio-wrap h2{font-size:1.04rem}
+                .project-table th:nth-child(2), .project-table td:nth-child(2){white-space:normal;}
+              }
+          
+              /* ====== Educación / certificados (botones) ====== */
+              .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+              .cert-btn {
+                background-color:#28a745; color:#fff; border:none; padding:10px 16px; border-radius:6px;
+                font-size:14px; min-width:220px; text-align:center; text-decoration:none;
+                display:inline-block; box-shadow:0 4px 6px rgba(0,0,0,.2); transition: background-color .2s ease;
+              }
+              .cert-btn:hover { background-color:#218838; }
+          
+              /* Educación lista (si la usas) */
+              .edu-list{margin:0; padding:0; list-style:none;}
+              .edu-item{display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px;}
+              .edu-title{line-height:1.35;}
+              .edu-btn-wrap{margin-left:12px;}
+              .edu-note{color:#c9d1d9; margin-left:8px; font-style:italic;}
+              @media (max-width:768px){
+                .edu-item{flex-direction:column; align-items:center; text-align:center;}
+                .edu-btn-wrap{margin-left:0; margin-top:6px;}
+              }
+            </style>
+          </head>
+          
+          <body>
+            <div class="section">
+              <header>
+                <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
+                <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
+          
+                <div class="buttons">
+                  <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
+                  <a class="btn" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
+                  <a class="btn" href="https://github.com/agaviria-analytics" target="_blank">🟢 Ver GitHub</a>
+                </div>
+                <p style="font-size:.85rem; margin-top:.5rem;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
+              </header>
+          
+              <div class="bio-wrap">
+                <!-- PERFIL -->
+                <h2>🎯 Analista de Datos Junior</h2>
+                <p>
+                  Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.
+                  Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.
+                </p>
+                <p>
+                  Experiencia en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>,
+                  <span class="kws">SQL (consultas y joins)</span> y
+                  <span class="kws">Python (pandas, limpieza y visualización de datos)</span>,
+                  aplicados a la creación de dashboards e indicadores.
+                </p>
+                <p>
+                  Participación en proyectos de automatización de reportes en Excel y SAP,
+                  mejorando tiempos de gestión y calidad de los datos.
+                </p>
+          
+                <hr class="divider" />
+          
+                <!-- SOBRE MÍ -->
+                <h2>🙋‍♂️ Sobre mí</h2>
+                <p>
+                  Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.
+                  Mi trayectoria en logística y operaciones me dio una base sólida para entender procesos empresariales.
+                  Hoy la complemento con <span class="kws">Power BI, Excel, Python y SQL</span> para optimizar reportes,
+                  automatizar tareas y crear visualizaciones útiles para la toma de decisiones.
+                  Busco seguir creciendo en entornos dinámicos y colaborativos.
+                </p>
+          
+                <ul class="clean-list">
+                  <li><span class="li-icon">⚙</span>
+                      <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
+                  <li><span class="li-icon">📊</span>
+                      <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
+                  <li><span class="li-icon">🔗</span>
+                      <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
+                </ul>
+          
+                <hr class="divider" />
+              </div>
+            </section>
               <section class="section">
                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
                  <div style="display: flex; align-items: center; gap: 10px;">
