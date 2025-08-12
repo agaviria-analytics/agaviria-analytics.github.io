@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -17,25 +17,32 @@
     /* ========== BASE ========== */
     :root{
       --bg:#0d1117; --panel:#161b22; --muted:#c9d1d9; --edge:#2a3342;
-      --primary:#2563eb; --primary-dk:#1e40af; --accent:#58a6ff;
+      --accent:#58a6ff;
     }
     *{ box-sizing:border-box; }
     body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif; background:var(--bg); color:#e5e7eb; }
     a{ color:inherit; }
 
-    /* ========== BOTONES UNIFICADOS ========== */
+    /* ========== BOTONES (verde con hover “flotante”) ========== */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-      padding:.45rem .85rem; font-size:.95rem; line-height:1; font-weight:700;
-      border-radius:10px; border:1px solid #2b3645; text-decoration:none;
-      background:#0f172a; color:#e5e7eb;
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-      min-width:200px;
+      padding:.7rem 1.4rem; font-size:1rem; line-height:1; font-weight:700;
+      border-radius:8px; border:1px solid #1f6f2e; text-decoration:none;
+      background:#238636; color:#fff; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
     }
-    .btn:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.3); }
-    .btn--primary{ background:var(--primary); border-color:var(--primary-dk); color:#fff; }
-    .btn--ghost{ background:transparent; border-color:#334155; }
-    .btn--sm{ padding:.38rem .7rem; font-size:.9rem; min-width:unset; }
+    .btn:hover{ background:#2ea043; border-color:#1f6f2e; transform:translateY(-2px); box-shadow:0 8px 18px rgba(46,160,67,.35); }
+    .btn:active{ transform:translateY(0); box-shadow:0 4px 10px rgba(46,160,67,.25); }
+    /* Variantes (si necesitas un botón oscuro/contorno) */
+    .btn--ghost{ background:transparent; color:#e5e7eb; border-color:#334155; }
+    .btn--sm{ padding:.45rem .9rem; font-size:.95rem; }
+
+    /* Misma anchura para los 3 botones del header */
+    .buttons{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
+    .buttons .btn{ width:230px; }               /* <- ajusta 220–240 a gusto */
+    @media (max-width:480px){
+      .buttons .btn{ width:100%; max-width:320px; }
+      .btn, .btn *{ transform:none !important; } /* sin “salto” en móvil */
+    }
 
     /* ========== SECCIONES ========== */
     .section{ max-width: 980px; margin:2rem auto; padding:1.5rem; background:var(--panel); border-radius:10px; }
@@ -46,137 +53,6 @@
     header{ text-align:center; padding:1.5rem 1rem .5rem; }
     header h1{ font-size:2.2rem; margin:0 0 .4rem; }
     header p{ color:var(--muted); margin:.25rem 0 0; }
-    .buttons{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
-
-    /* BIO */
-    .bio-wrap{ max-width:760px; margin:0 auto; padding:0 1rem; }
-    .bio-wrap p{ margin:.5rem 0 0; line-height:1.55; text-align:justify; }
-    .bio-wrap h2{ margin:.5rem 0 .25rem; font-size:1.1rem; display:flex; gap:.5rem; align-items:center; }
-    .kws{ font-weight:800; }
-
-    .clean-list{ list-style:none; padding:0; margin:.35rem 0 0; }
-    .clean-list li{ display:grid; grid-template-columns:1.25rem 1fr; column-gap:.5rem; align-items:start; margin:.25rem 0; line-height:1.55; text-align:justify; }
-    .li-icon{ text-align:center; opacity:.95; }
-
-    /* ========== TABLA PROYECTOS ========== */
-    .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
-    .project-table{ width:100%; border-collapse:collapse; table-layout:fixed; }
-    .project-table th, .project-table td{
-      border:1px solid #30363d; padding:.7rem .75rem; text-align:left;
-      vertical-align:top; line-height:1.35;
-    }
-    .project-table th{ background:#21262d; color:#f0f0f0; }
-
-    /* Anchos desktop */
-    .project-table th:nth-child(1), .project-table td:nth-child(1){ width:28%; }
-    .project-table th:nth-child(2), .project-table td:nth-child(2){ width:57%; }
-    .project-table th:nth-child(3), .project-table td:nth-child(3){ width:15%; text-align:center; white-space:nowrap; }
-
-    /* Comportamiento texto */
-    .project-table td:nth-child(1),
-    .project-table td:nth-child(2){
-      white-space:normal; word-break:break-word; overflow-wrap:anywhere;
-    }
-    .project-table td:nth-child(2){ text-align:justify; }
-
-    /* Badge de GitHub compacto */
-    .repo-badge{ display:inline-block; max-width:100%; height:28px; }
-
-    /* Responsive */
-    @media (max-width: 768px){
-      .project-table th, .project-table td{ padding:.55rem .6rem; font-size:15px; }
-      .project-table th:nth-child(1), .project-table td:nth-child(1){ width:34%; }
-      .project-table th:nth-child(2), .project-table td:nth-child(2){ width:54%; }
-      .project-table th:nth-child(3), .project-table td:nth-child(3){ width:12%; }
-      .btn{ min-width:unset; }
-    }
-    @media (max-width: 480px){
-      .project-table th, .project-table td{ padding:.5rem .55rem; font-size:14.5px; line-height:1.32; }
-      .project-table th:nth-child(1), .project-table td:nth-child(1){ width:36%; }
-      .project-table th:nth-child(3), .project-table td:nth-child(3){ width:96px; padding-left:.4rem; padding-right:.4rem; }
-      .project-table td:nth-child(3) a{ display:block; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    }
-
-    /* ========== EDUCACIÓN / CERTIFICADOS ========== */
-    .edu-list{ margin:0; padding:0; list-style:none; }
-    .edu-item{ display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
-    .edu-title{ line-height:1.35; }
-    .edu-btn-wrap{ margin-left:12px; }
-    .edu-note{ color:var(--muted); margin-left:8px; font-style:italic; }
-    @media (max-width:768px){ .edu-item{ flex-direction:column; align-items:center; text-align:center; } .edu-btn-wrap{ margin-left:0; margin-top:6px; } }
-
-    .cert-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
-    .cert-chip{
-      display:inline-flex; align-items:center; gap:.45rem; padding:.45rem .75rem;
-      border-radius:10px; background:#065f46; color:#ecfdf5; border:1px solid #064e3b;
-      font-weight:700; white-space:nowrap;
-    }
-    .cert-chip:hover{ filter:brightness(1.05); }
-
-    /* ========== FOOTER ========== */
-    .footer{ background:#0b1220; border-top:1px solid #242d3b; padding:22px 16px; }
-    .footer .container{ max-width:980px; margin:0 auto; }
-    .footer h2{ margin:0 0 .6rem; text-align:center; }
-    .footer p{ margin:.4rem 0; color:#cbd5e1; line-height:1.45; text-align:center; }
-          /* ===== BOTONES (versión verde con hover “flotante”) ===== */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-  padding:0.7rem 1.4rem;
-  font-size:1rem; line-height:1; font-weight:700;
-  border-radius:8px;
-  border:1px solid #1f6f2e;
-  background:#238636;            /* verde base */
-  color:#fff; text-decoration:none;
-  min-width:200px; text-align:center;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
-}
-.btn:hover{
-  background:#2ea043;            /* verde hover */
-  border-color:#1f6f2e;
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
-.btn:active{
-  transform:translateY(0);
-  box-shadow:0 4px 10px rgba(46,160,67,.25);
-}
-
-/* Variaciones opcionales, por si las usas en otros lados */
-.btn--ghost{
-  background:transparent;
-  color:#e5e7eb;
-  border-color:#334155;
-}
-.btn--ghost:hover{
-  background:#1f2937;
-  transform:translateY(-2px);
-  box-shadow:0 8px 16px rgba(0,0,0,.25);
-}
-.btn--sm{ padding:.45rem .9rem; font-size:.95rem; min-width:unset; }
-
-/* Evitar que algún estilo viejo cambie tamaños en móvil */
-.btn, .btn * { transform: none; }
-
-/* ===== Certificados con look “píldora” verdes ===== */
-.cert-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
-.cert-btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
-  padding:.5rem .9rem; border-radius:10px;
-  background:#238636; border:1px solid #1f6f2e; color:#fff; font-weight:700;
-  box-shadow:0 4px 6px rgba(0,0,0,.2);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-  min-width:220px; text-align:center;
-}
-.cert-btn:hover{
-  background:#2ea043;
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(46,160,67,.35);
-}
-
-/* Botón del contacto (si quieres igual al principal) */
-.section a.btn{ /* asegura que el de Contacto se vea igual */
-  background:#238636; border-color:#1f6f2e; color:#fff;
-}    
   </style>
 </head>
 
@@ -187,13 +63,12 @@
       <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
 
       <div class="buttons">
-        <a class="btn btn--primary" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank" rel="noopener">📄 Descargar Hoja de Vida</a>
-        <a class="btn btn--ghost" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗 Ver mi LinkedIn</a>
-        <a class="btn btn--ghost" href="https://github.com/agaviria-analytics" target="_blank" rel="noopener">🟢 Ver GitHub</a>
+        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank" rel="noopener">📄 Descargar Hoja de Vida</a>
+        <a class="btn" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank" rel="noopener">🔗 Ver mi LinkedIn</a>
+        <a class="btn" href="https://github.com/agaviria-analytics" target="_blank" rel="noopener">🟢 Ver GitHub</a>
       </div>
-      <p style="font-size:.85rem; margin-top:.5rem; color:var(--muted);">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
+      <p style="font-size:.85rem; margin-top:.5rem; color:#c9d1d9;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
     </header>
-
     <div class="bio-wrap">
       <h2>🎯 Analista de Datos Junior</h2>
       <p>Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos. Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.</p>
