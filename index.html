@@ -1,209 +1,197 @@
-          <!DOCTYPE html>
-          <html lang="es">
-          <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Alejandro G. | Analista de Datos</title>
-          
-            <!-- Open Graph / Twitter -->
-            <meta property="og:title" content="Portafolio Héctor Alejandro Gaviria Marín" />
-            <meta property="og:description" content="Proyectos de análisis de datos con Python, SQL, Power BI, Excel y más." />
-            <meta property="og:image" content="https://agaviria-analytics.github.io/img/preview-portafolio.png" />
-            <meta property="og:type" content="website" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <link rel="icon" type="image/png" href="favicon.png" />
-          
-            <style>
-              /* ====== Base ====== */
-              * { box-sizing: border-box; }
-              body {
-                margin: 0;
-                font-family: 'Segoe UI', sans-serif;
-                background-color: #0d1117;
-                color: #f0f0f0;
-                line-height: 1.6;
-              }
-              a { color: #58a6ff; }
-          
-              /* ====== Header / CTA ====== */
-              header { text-align: center; padding: 2rem 1rem 1rem; }
-              header h1 { font-size: 2.5rem; color: #fff; margin: 0; }
-              header p { font-size: 1.1rem; color: #c9d1d9; margin:.5rem 0 0; }
-              .buttons { text-align: center; margin-top: 1rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
-              .btn {
-                display: inline-block;
-                padding: 0.7rem 1.4rem;
-                background-color: #238636;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: bold;
-                min-width: 200px;
-                text-align: center;
-                transition: all .2s ease;
-              }
-              .btn:hover { background-color: #2ea043; box-shadow: 0 0 12px rgba(46,160,67,.6); transform: translateY(-2px); }
-              .btn:active { transform: translateY(0); box-shadow: 0 0 5px rgba(46,160,67,.4); }
-          
-              /* ====== Secciones ====== */
-              .section {
-                max-width: 900px;
-                margin: 2rem auto;
-                padding: 1.5rem;
-                background-color: #161b22;
-                border-radius: 10px;
-              }
-              .section h2 { color: #58a6ff; margin: 0 0 1rem; }
-              .divider { border:0; height:1px; background:#444; margin:.6rem 0; }
-          
-              /* ====== BIO (perfil + sobre mí) ====== */
-              .bio-wrap { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
-              .bio-wrap p { margin:.45rem 0 0; line-height:1.55; text-align: justify; }
-              .bio-wrap h2 { margin:.5rem 0 .25rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center; }
-              .kws { font-weight: 700; }
-          
-              /* Lista sin huecos (icono fijo + texto fluido) */
-              .clean-list { list-style: none; padding: 0; margin:.35rem 0 0; }
-              .clean-list li {
-                display: grid;
-                grid-template-columns: 1.25rem 1fr;
-                column-gap: .5rem;
-                align-items: start;
-                margin: .25rem 0;
-                line-height: 1.55;
-                text-align: justify;
-              }
-              .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
-          
-              /* ====== Tabla de proyectos (responsive) ====== */
-              .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
-              .project-table { width:100%; border-collapse:collapse; table-layout:auto; } /* sin min-width */
-              .project-table th, .project-table td {
-                border: 1px solid #30363d; padding: .75rem; text-align: left; white-space: nowrap;
-              }
-              .project-table th { background-color: #21262d; color: #f0f0f0; }
-              /* Deja que la columna Descripción pueda romper línea en móvil */
-              @media (max-width:480px){
-                header h1{font-size:1.7rem}
-                header p{font-size:1rem}
-                .section{margin:1rem .5rem; padding:1rem}
-                .bio-wrap p, .clean-list li{font-size:15.5px}
-                .bio-wrap h2{font-size:1.04rem}
-                .project-table th:nth-child(2), .project-table td:nth-child(2){white-space:normal;}
-              }
-          
-              /* ====== Educación / certificados (botones) ====== */
-              .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
-              .cert-btn {
-                background-color:#28a745; color:#fff; border:none; padding:10px 16px; border-radius:6px;
-                font-size:14px; min-width:220px; text-align:center; text-decoration:none;
-                display:inline-block; box-shadow:0 4px 6px rgba(0,0,0,.2); transition: background-color .2s ease;
-              }
-              .cert-btn:hover { background-color:#218838; }
-          
-              /* Educación lista (si la usas) */
-              .edu-list{margin:0; padding:0; list-style:none;}
-              .edu-item{display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px;}
-              .edu-title{line-height:1.35;}
-              .edu-btn-wrap{margin-left:12px;}
-              .edu-note{color:#c9d1d9; margin-left:8px; font-style:italic;}
-              @media (max-width:768px){
-                .edu-item{flex-direction:column; align-items:center; text-align:center;}
-                .edu-btn-wrap{margin-left:0; margin-top:6px;}
-              }
-            </style>
-          </head>
-          
-          <body>
-            <div class="section">
-              <header>
-                <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
-                <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
-          
-                <div class="buttons">
-                  <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
-                  <a class="btn" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
-                  <a class="btn" href="https://github.com/agaviria-analytics" target="_blank">🟢 Ver GitHub</a>
-                </div>
-                <p style="font-size:.85rem; margin-top:.5rem;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
-              </header>
-          
-              <div class="bio-wrap">
-                <!-- PERFIL -->
-                <h2>🎯 Analista de Datos Junior</h2>
-                <p>
-                  Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.
-                  Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.
-                </p>
-                <p>
-                  Experiencia en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>,
-                  <span class="kws">SQL (consultas y joins)</span> y
-                  <span class="kws">Python (pandas, limpieza y visualización de datos)</span>,
-                  aplicados a la creación de dashboards e indicadores.
-                </p>
-                <p>
-                  Participación en proyectos de automatización de reportes en Excel y SAP,
-                  mejorando tiempos de gestión y calidad de los datos.
-                </p>
-          
-                <hr class="divider" />
-          
-                <!-- SOBRE MÍ -->
-                <h2>🙋‍♂️ Sobre mí</h2>
-                <p>
-                  Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.
-                  Mi trayectoria en logística y operaciones me dio una base sólida para entender procesos empresariales.
-                  Hoy la complemento con <span class="kws">Power BI, Excel, Python y SQL</span> para optimizar reportes,
-                  automatizar tareas y crear visualizaciones útiles para la toma de decisiones.
-                  Busco seguir creciendo en entornos dinámicos y colaborativos.
-                </p>
-          
-                <ul class="clean-list">
-                  <li><span class="li-icon">⚙</span>
-                      <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
-                  <li><span class="li-icon">📊</span>
-                      <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
-                  <li><span class="li-icon">🔗</span>
-                      <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
-                </ul>
-          
-                <hr class="divider" />
-              </div>
-            </section>
-              <section class="section">
-               <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-                 <div style="display: flex; align-items: center; gap: 10px;">
-                  <h2 style="margin: 0; font-size: 1.5rem;">📈 Proyectos Destacados</h2>
-                  <img src="Python.png" alt="Ícono Python para proyectos" style="height: 26px;">
-                  <img src="SQL.png" alt="Ícono SQL para proyectos" style="height: 26px;">
-                  <img src="PowerBI.png" alt="Ícono Power BI para proyectos" style="height: 26px;">
-                  <img src="Excel.png" alt="Ícono Excel para proyectos" style="height: 26px;">
-                </div>
-              </div>
-              </div>
-               <div style="overflow-x: auto;"> 
-                <table class="project-table">
-                  <thead>
-                    <tr>
-                      <th>Proyecto</th>
-                      <th>Descripción</th>
-                      <th>Repositorio</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <img src="powerbi.png" width="25" style="vertical-align: middle; margin-right: 6px;">
-                        Análisis con Power BI – Caso Appol
-                      </td>
-                        <td> Dashboard profesional en Power BI con medidas DAX implícitas y explícitas, análisis de utilidad y margen por región, limpieza con Power Query y publicación web.
-                        </td> 
-                        <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank">
-                           <img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub">
-                            </a> 
-                        </td>
-                    </tr>
-                    <tr>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro G. | Analista de Datos</title>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Portafolio Héctor Alejandro Gaviria Marín" />
+  <meta property="og:description" content="Proyectos de análisis de datos con Python, SQL, Power BI, Excel y más." />
+  <meta property="og:image" content="https://agaviria-analytics.github.io/img/preview-portafolio.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    /* ====== Base ====== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    a { color: #58a6ff; text-decoration: none; }
+
+    /* ====== Header / CTA ====== */
+    header { text-align: center; padding: 2rem 1rem 1rem; }
+    header h1 { font-size: 2.5rem; color: #fff; margin: 0; }
+    header p { font-size: 1.1rem; color: #c9d1d9; margin: .5rem 0 0; }
+    .buttons { text-align: center; margin-top: 1rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      background-color: #238636;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      min-width: 200px;
+      text-align: center;
+      transition: all .2s ease;
+    }
+    .btn:hover { background-color: #2ea043; box-shadow: 0 0 12px rgba(46,160,67,.6); transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); box-shadow: 0 0 5px rgba(46,160,67,.4); }
+
+    /* ====== Secciones ====== */
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #161b22;
+      border-radius: 10px;
+    }
+    .section h2 { color: #58a6ff; margin: 0 0 1rem; }
+    .divider { border:0; height:1px; background:#444; margin:.6rem 0; }
+
+    /* ====== BIO (perfil + sobre mí) ====== */
+    .bio-wrap { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
+    .bio-wrap p { margin:.45rem 0 0; line-height:1.55; text-align: justify; }
+    .bio-wrap h2 { margin:.5rem 0 .25rem; font-size:1.08rem; display:flex; gap:.5rem; align-items:center; }
+    .kws { font-weight: 700; }
+
+    /* Lista limpia con icono + texto */
+    .clean-list { list-style: none; padding: 0; margin:.35rem 0 0; }
+    .clean-list li {
+      display: grid;
+      grid-template-columns: 1.25rem 1fr;
+      column-gap: .5rem;
+      align-items: start;
+      margin: .25rem 0;
+      line-height: 1.55;
+      text-align: justify;
+    }
+    .li-icon { display:block; text-align:center; line-height:1.55; opacity:.95; }
+
+    /* ====== Tabla de proyectos (responsive sin “escala”) ====== */
+    .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; }
+    .project-table { width:100%; border-collapse:collapse; table-layout:auto; }
+    .project-table th, .project-table td { border:1px solid #30363d; padding:.75rem; text-align:left; white-space:nowrap; }
+    .project-table th { background-color:#21262d; color:#f0f0f0; }
+    /* permite que la columna Descripción rompa línea en móvil */
+    @media (max-width: 480px) {
+      header h1{font-size:1.7rem}
+      header p{font-size:1rem}
+      .section{margin:1rem .5rem; padding:1rem}
+      .bio-wrap p, .clean-list li{font-size:15.5px}
+      .bio-wrap h2{font-size:1.04rem}
+      .project-table th:nth-child(2), .project-table td:nth-child(2){white-space:normal;}
+    }
+
+    /* ====== Educación / certificados ====== */
+    .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+    .cert-btn {
+      background-color:#28a745; color:#fff; border:none; padding:10px 16px; border-radius:6px;
+      font-size:14px; min-width:220px; text-align:center; display:inline-block;
+      box-shadow:0 4px 6px rgba(0,0,0,.2); transition: background-color .2s ease;
+    }
+    .cert-btn:hover { background-color:#218838; }
+
+    .edu-list{margin:0; padding:0; list-style:none;}
+    .edu-item{display:flex; align-items:center; flex-wrap:wrap; margin-bottom:12px;}
+    .edu-title{line-height:1.35;}
+    .edu-btn-wrap{margin-left:12px;}
+    .edu-note{color:#c9d1d9; margin-left:8px; font-style:italic;}
+    @media (max-width:768px){
+      .edu-item{flex-direction:column; align-items:center; text-align:center;}
+      .edu-btn-wrap{margin-left:0; margin-top:6px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section">
+    <header>
+      <h1>👋 Hola, soy Héctor Alejandro Gaviria Marin.</h1>
+      <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
+
+      <div class="buttons">
+        <a class="btn" href="CV_Hector_Gaviria_AnalistaDatos_2025.pdf" target="_blank">📄 Descargar Hoja de Vida</a>
+        <a class="btn" href="https://linkedin.com/in/héctor-alejandro-gaviria-marin-43296265" target="_blank">🔗 Ver mi LinkedIn</a>
+        <a class="btn" href="https://github.com/agaviria-analytics" target="_blank">🟢 Ver GitHub</a>
+      </div>
+      <p style="font-size:.85rem; margin-top:.5rem;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
+    </header>
+
+    <div class="bio-wrap">
+      <!-- PERFIL -->
+      <h2>🎯 Analista de Datos Junior</h2>
+      <p>
+        Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos.
+        Más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.
+      </p>
+      <p>
+        Experiencia en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>,
+        <span class="kws">SQL (consultas y joins)</span> y
+        <span class="kws">Python (pandas, limpieza y visualización de datos)</span>,
+        aplicados a la creación de dashboards e indicadores.
+      </p>
+      <p>
+        Participación en proyectos de automatización de reportes en Excel y SAP,
+        mejorando tiempos de gestión y calidad de los datos.
+      </p>
+
+      <hr class="divider" />
+
+      <!-- SOBRE MÍ -->
+      <h2>🙋‍♂️ Sobre mí</h2>
+      <p>
+        Apasionado por aprender y aplicar soluciones de análisis de datos que generen valor.
+        Mi trayectoria en logística y operaciones me dio una base sólida para entender procesos empresariales.
+        Hoy la complemento con <span class="kws">Power BI, Excel, Python y SQL</span> para optimizar reportes,
+        automatizar tareas y crear visualizaciones útiles para la toma de decisiones.
+        Busco seguir creciendo en entornos dinámicos y colaborativos.
+      </p>
+
+      <ul class="clean-list">
+        <li><span class="li-icon">⚙</span>
+            <span><strong>Automatización</strong> de procesos manuales con Python y Excel.</span></li>
+        <li><span class="li-icon">📊</span>
+            <span><strong>Desarrollo</strong> de dashboards en Power BI con alertas, segmentadores y medidas DAX.</span></li>
+        <li><span class="li-icon">🔗</span>
+            <span><strong>Integración</strong> de datos desde SQL Server, MySQL y archivos Excel.</span></li>
+      </ul>
+
+      <hr class="divider" />
+    </div>
+  </div>
+
+  <!-- PROYECTOS DESTACADOS -->
+  <section class="section">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <h2 style="margin:0; font-size:1.5rem;">📈 Proyectos Destacados</h2>
+        <img src="Python.png" alt="Python" style="height:26px;">
+        <img src="SQL.png" alt="SQL" style="height:26px;">
+        <img src="PowerBI.png" alt="Power BI" style="height:26px;">
+        <img src="Excel.png" alt="Excel" style="height:26px;">
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="project-table">
+        <thead>
+          <tr><th>Proyecto</th><th>Descripción</th><th>Repositorio</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="powerbi.png" width="25" style="vertical-align:middle; margin-right:6px;">Análisis con Power BI – Caso Appol</td>
+            <td>Dashboard profesional en Power BI con medidas DAX implícitas y explícitas, análisis de utilidad y margen por región, limpieza con Power Query y publicación web.</td>
+            <td><a href="https://github.com/agaviria-analytics/powerbi-dashboard-appol" target="_blank"><img src="https://img.shields.io/badge/Ver%20Proyecto-en%20GitHub-blue?logo=github" alt="Ver en GitHub"></a></td>
+          </tr>
+          <tr>
+             <tr>
                       <td>✍️ Análisis de abastecimientos</td>
                       <td>Lenguaje de datos en Python + visualización con alertas y Power BI.</td>
                       <td><a href="https://github.com/agaviria-analytics/analisis-abastecimientos" target="_blank">
@@ -411,107 +399,121 @@
                   </a> 
                 </td>
               </tr>   
-                </table>
-              </div>   
-              </section>
-               <section class="section">
-                <h2>💼 Experiencia Profesional</h2>
-                <div style="margin-bottom: 1.5rem;">
-                  <strong>Inmel Ingeniería</strong> – Analista de Materiales (2024 - 2025)
-                  <ul>
-                    <li>📌Coordinación y gestión de la logística inversa de equipos (ONT, EMTA, decodificadores).</li>
-                    <li>📌Desarrollo de tableros de control en Power BI para visualización de inventarios.</li>
-                    <li>📌Automatización de procesos con Excel, mejorando tiempos de gestión.</li>
-                    <li>📌Implementación de soluciones con IA para flujos logísticos.</li>
-                  </ul>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                  <strong>Pérez y Cardona SAS</strong> – Analista Jr. Operación Compras (2021 – 2024)
-                  <ul>
-                    <li>📌Manejo de SAP (MM/SD), software de abastecimiento y promociones (ICManager).</li>
-                    <li>📌Creación de dashboards operativos en Power BI.</li>
-                    <li>📌Automatización de apertura de nuevos puntos de venta vía scripts.</li>
-                    <li>📌Optimización de activación de promociones y validación de facturas.</li>
-                  </ul>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                  <strong>Suppla S.A. Logística Inteligente</strong> – Supervisor de Despachos (2008 – 2020)
-                  <ul>
-                    <li>📌Coordinación de operaciones de cross-docking, importados y logística inversa.</li>
-                    <li>📌Solución de inconsistencias para cliente Cencosud.</li>
-                    <li>📌Diseño de informes y cuadros de mando para análisis logístico.</li>
-                    <li>📌Uso de software Genesix (Cencosud) y Sislog (Suppla).</li>
-                  </ul>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                  <strong>Domesa de Colombia S.A. (Sertempo)</strong> – Auxiliar operativo interno (2007 – 2008)
-                  <ul>
-                    <li>📌Gestión de garantías, créditos y soporte legal para cliente Brinks.</li>
-                    <li>📌Elaboración de reportes mensuales en Excel.</li>
-                    <li>📌Uso de software Domenet para trazabilidad y documentación.</li>
-                  </ul>
-                </div>
-              </section>
-                    <section class="section">
-                          <h2>🎓 Formación Académica</h2>
-                          <ul class="edu-list">
-                            <li class="edu-item">
-                              <span class="edu-title">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</span>
-                              <div class="edu-btn-wrap">
-                                <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn btn-sm">
-                                  <img src="icon_pdf.png" alt="PDF" class="icon"> Ver diploma
-                                </a>
-                              </span> 
-                            </li>
-                          </ul> 
-                            <li class="edu-item">
-                              <span class="edu-title">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</span>
-                              <em class="edu-note">(Certificación en trámite)</em>
-                            </li>
-                          </ul>
-                        </section>
-                <section class="section" id="certificados">
-                <h2 style="text-align: center;">🎓 Certificados Destacados</h2>
-                <p style="text-align: center; margin-bottom: 1.5rem;">
-                  Certificados que respaldan mi formación en análisis de datos y herramientas clave:
-                </p>
-                <div class="cert-grid">
-                  <a class="cert-btn" href="./google-analisis-datos.pdf" target="_blank">📄 Google – Análisis de Datos</a>
-                  <a class="cert-btn" href="./powerbi-dax.pdf" target="_blank">📄 Power BI + DAX</a>
-                  <a class="cert-btn" href="./sql-basico.pdf" target="_blank">📄 SQL – Base de Datos</a>
-                  <a class="cert-btn" href="./python-analisis.pdf" target="_blank">📄 Python para Análisis</a>
-                  <a class="cert-btn" href="./excel-avanzado.pdf" target="_blank">📄 Excel Avanzado</a>
-                  <a class="cert-btn" href="./powerbi-complementario.pdf" target="_blank">📄 Power BI (Complementario)</a>
-                </div>
-              </section>
-                <section class="section">
-                <h2>📚 Blog de Aprendizaje</h2>
-                <ul style="padding-left: 0;">
-                  <li><span style="display:inline-block;width:22px;">🧪</span> Automatización de reportes con Python y Excel</li>
-                  <li><span style="display:inline-block;width:22px;">📊</span> Transformación de datos con Power BI y segmentaciones</li>
-                  <li><span style="display:inline-block;width:22px;">🧩</span> Dashboards interactivos en Power BI</li>
-                  <li><span style="display:inline-block;width:22px;">📆</span> Uso de tabla calendario y filtros inteligentes con DAX</li>
-                </ul>
-              </section>
-              <section class="section" style="text-align: center;">
-                <h2>📬 Contacto</h2>
-                <p>¿Te interesa mi perfil? Estoy abierto a nuevas oportunidades y retos profesionales.</p>
-                <a href="mailto:agaviria1408@gmail.com" style="margin:0.5rem; padding:0.7rem 1.4rem; background-color:#238636; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold;">📩 Envíame un correo</a>
-                <p style="margin-top: 1rem; color: #aaa;">
-                📞 También puedes contactarme al: 
-                <a href="https://wa.me/573006199324" target="_blank" style="color:#25D366; text-decoration: none; font-weight: bold;">
-                  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="18" style="vertical-align: middle; margin-right: 4px;">
-                  +57 300 619 9324
-                </a>
-              </p>
-                <p style="margin-top: 1.5rem; color: #58a6ff;"><em>Gracias por visitar mi portafolio. Espero que podamos conectar pronto.</em></p>
-              </section>
-              <footer style="text-align: center; color: #888; font-size: 0.85rem; padding: 1rem 0; background-color: #0d1117;">
-                <h2>📜 Derechos de Autor</h2>
-                <p>Este portafolio ha sido desarrollado por Héctor Alejandro Gaviria Marín con fines profesionales.</p>
-                <p>Todos los proyectos, textos y diseños son de autoría propia.<br>
-                   Está prohibida su copia, modificación o distribución sin autorización.</p>
-                <p style="margin-top: 1rem; font-weight: bold;">© 2025 Héctor Alejandro Gaviria Marín. Todos los derechos reservados.</p>
-              </footer>
-              </body>
-              </html>
+        </tbody>
+      </table>
+    </div>
+  </section>
+<!-- EXPERIENCIA -->
+  <section class="section">
+    <h2>💼 Experiencia Profesional</h2>
+
+    <div style="margin-bottom:1.5rem;">
+      <strong>Inmel Ingeniería</strong> – Analista de Materiales (2024 - 2025)
+      <ul>
+        <li>📌 Coordinación y gestión de la logística inversa de equipos (ONT, EMTA, decodificadores).</li>
+        <li>📌 Desarrollo de tableros de control en Power BI para visualización de inventarios.</li>
+        <li>📌 Automatización de procesos con Excel, mejorando tiempos de gestión.</li>
+        <li>📌 Implementación de soluciones con IA para flujos logísticos.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <strong>Pérez y Cardona SAS</strong> – Analista Jr. Operación Compras (2021 – 2024)
+      <ul>
+        <li>📌 Manejo de SAP (MM/SD), software de abastecimiento y promociones (ICManager).</li>
+        <li>📌 Creación de dashboards operativos en Power BI.</li>
+        <li>📌 Automatización de apertura de nuevos puntos de venta vía scripts.</li>
+        <li>📌 Optimización de activación de promociones y validación de facturas.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <strong>Suppla S.A. Logística Inteligente</strong> – Supervisor de Despachos (2008 – 2020)
+      <ul>
+        <li>📌 Coordinación de operaciones de cross-docking, importados y logística inversa.</li>
+        <li>📌 Solución de inconsistencias para cliente Cencosud.</li>
+        <li>📌 Diseño de informes y cuadros de mando para análisis logístico.</li>
+        <li>📌 Uso de software Genesix (Cencosud) y Sislog (Suppla).</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <strong>Domesa de Colombia S.A. (Sertempo)</strong> – Auxiliar operativo interno (2007 – 2008)
+      <ul>
+        <li>📌 Gestión de garantías, créditos y soporte legal para cliente Brinks.</li>
+        <li>📌 Elaboración de reportes mensuales en Excel.</li>
+        <li>📌 Uso de software Domenet para trazabilidad y documentación.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section class="section">
+    <h2>🎓 Formación Académica</h2>
+    <ul class="edu-list">
+      <li class="edu-item">
+        <span class="edu-title">📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)</span>
+        <div class="edu-btn-wrap">
+          <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn">
+            <img src="icon_pdf.png" alt="PDF" style="width:20px; vertical-align:middle; margin-right:8px;"> Ver diploma
+          </a>
+        </div>
+      </li>
+      <li class="edu-item">
+        <span class="edu-title">📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)</span>
+        <em class="edu-note">(Certificación en trámite)</em>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CERTIFICADOS -->
+  <section class="section" id="certificados">
+    <h2 style="text-align:center;">🎓 Certificados Destacados</h2>
+    <p style="text-align:center; margin-bottom:1.5rem;">Certificados que respaldan mi formación en análisis de datos y herramientas clave:</p>
+    <div class="cert-grid">
+      <a class="cert-btn" href="./google-analisis-datos.pdf" target="_blank">📄 Google – Análisis de Datos</a>
+      <a class="cert-btn" href="./powerbi-dax.pdf" target="_blank">📄 Power BI + DAX</a>
+      <a class="cert-btn" href="./sql-basico.pdf" target="_blank">📄 SQL – Base de Datos</a>
+      <a class="cert-btn" href="./python-analisis.pdf" target="_blank">📄 Python para Análisis</a>
+      <a class="cert-btn" href="./excel-avanzado.pdf" target="_blank">📄 Excel Avanzado</a>
+      <a class="cert-btn" href="./powerbi-complementario.pdf" target="_blank">📄 Power BI (Complementario)</a>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section">
+    <h2>📚 Blog de Aprendizaje</h2>
+    <ul style="padding-left:0; list-style:none;">
+      <li><span style="display:inline-block;width:22px;">🧪</span> Automatización de reportes con Python y Excel</li>
+      <li><span style="display:inline-block;width:22px;">📊</span> Transformación de datos con Power BI y segmentaciones</li>
+      <li><span style="display:inline-block;width:22px;">🧩</span> Dashboards interactivos en Power BI</li>
+      <li><span style="display:inline-block;width:22px;">📆</span> Uso de tabla calendario y filtros inteligentes con DAX</li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" style="text-align:center;">
+    <h2>📬 Contacto</h2>
+    <p>¿Te interesa mi perfil? Estoy abierto a nuevas oportunidades y retos profesionales.</p>
+    <a href="mailto:agaviria1408@gmail.com" class="btn">📩 Envíame un correo</a>
+    <p style="margin-top:1rem; color:#aaa;">
+      📞 También puedes contactarme al:
+      <a href="https://wa.me/573006199324" target="_blank" style="color:#25D366; font-weight:bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="18" style="vertical-align:middle; margin-right:4px;">
+        +57 300 619 9324
+      </a>
+    </p>
+    <p style="margin-top:1.5rem; color:#58a6ff;"><em>Gracias por visitar mi portafolio. Espero que podamos conectar pronto.</em></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center; color:#888; font-size:.85rem; padding:1rem 0; background-color:#0d1117;">
+    <h2>📜 Derechos de Autor</h2>
+    <p>Este portafolio ha sido desarrollado por Héctor Alejandro Gaviria Marín con fines profesionales.</p>
+    <p>Todos los proyectos, textos y diseños son de autoría propia.<br>
+       Está prohibida su copia, modificación o distribución sin autorización.</p>
+    <p style="margin-top:1rem; font-weight:bold;">© 2025 Héctor Alejandro Gaviria Marín. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+          
