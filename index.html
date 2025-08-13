@@ -457,6 +457,46 @@ td.descripcion {
         white-space: nowrap;    /* Mantiene 'Power BI' y 'SQL' juntos si hiciera falta */
       }
     }
+    /* Contenedor del título + iconos */
+        .heading-with-icons{
+          display: flex;
+          align-items: center;
+          gap: .6rem;
+          flex-wrap: wrap;                   /* Permite que los iconos bajen */
+        }
+        
+        /* Título responsive */
+        .heading-with-icons h2{
+          margin: 0;
+          font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+        }
+        
+        /* Fila de iconos */
+        .iconos-proyectos{
+          display: flex;
+          align-items: center;
+          gap: .45rem;
+        }
+        
+        /* Tamaño de iconos: siempre nítidos y proporcionados */
+        .iconos-proyectos img{
+          width: clamp(20px, 3.2vw, 26px);   /* 20–26 px según pantalla */
+          height: auto;
+          object-fit: contain;
+        }
+        
+        /* En móvil vertical, pone los iconos debajo del título */
+        @media (max-width: 480px){
+          .iconos-proyectos{
+            flex-basis: 100%;                /* Ocupa ancho completo */
+            margin-left: 2rem;               /* Alineados con el texto del título */
+            order: 2;                        /* Debajo del h2 */
+          }
+          .heading-with-icons h2{
+            order: 1;
+          }
+        }
+
 </style>
 </head>
 <body>
@@ -502,15 +542,17 @@ td.descripcion {
   </div>
 
   <!-- ========== PROYECTOS DESTACADOS ========== -->
-  <section class="section">
-    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-      <h2 style="margin:0; font-size:1.5rem;">📈 Proyectos Destacados</h2>
-      <img src="Python.png" alt="Python" style="height:26px;">
-      <img src="SQL.png" alt="SQL" style="height:26px;">
-      <img src="PowerBI.png" alt="Power BI" style="height:26px;">
-      <img src="Excel.png" alt="Excel" style="height:26px;">
-    </div>
-
+    <section class="section">
+        <div class="heading-with-icons">
+          <h2>📈 Proyectos Destacados</h2>
+          <div class="iconos-proyectos" aria-label="Tecnologías usadas">
+            <img src="Python.png" alt="Python">
+            <img src="SQL.png" alt="SQL">
+            <img src="PowerBI.png" alt="Power BI">
+            <img src="Excel.png" alt="Excel">
+          </div>
+        </div>
+      </section>
     <div class="table-scroll">
       <table class="project-table">
         <thead>
