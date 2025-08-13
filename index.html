@@ -435,6 +435,28 @@ td.descripcion {
     background-color: rgba(88, 166, 255, 0.05); /* Sutil fondo semitransparente */
     border-radius: 4px;
   }
+        /* Título y subtítulo */
+    .titulo-rol{
+      margin: 0 0 .5rem 0;
+    }
+    .titulo-rol .subtitulo-rol{
+      display: block;           /* Va debajo del título */
+      margin-left: 2rem;        /* Alineado con el texto, no con el icono */
+      font-size: 1rem;
+      font-weight: 400;
+      word-break: keep-all;     /* Evita cortes raros */
+    }
+    
+    /* Ajustes en pantallas pequeñas (vertical móvil) */
+    @media (max-width: 480px){
+      .titulo-rol .subtitulo-rol{
+        font-size: .95rem;      /* Un pelín más pequeño para que quepa mejor */
+        margin-left: 2.1rem;    /* Mantiene la alineación */
+      }
+      .titulo-rol .subtitulo-rol strong{
+        white-space: nowrap;    /* Mantiene 'Power BI' y 'SQL' juntos si hiciera falta */
+      }
+    }
 </style>
 </head>
 <body>
@@ -456,13 +478,12 @@ td.descripcion {
       <p style="font-size:.85rem; margin-top:.5rem; color:#c9d1d9;">*El acceso a LinkedIn puede requerir iniciar sesión con la cuenta del visitante.*</p>
     </header>
    <div class="bio-wrap">
-        <h2>
-          🎯 Analista de Datos
-          <br>
-          <span style="margin-left: 2rem; font-size: 1rem; font-weight: normal;">
-            Automatización de Reportes con <strong>Python</strong>, <strong>Power BI</strong> y <strong>SQL</strong>
-          </span>
-        </h2>
+          <h2 class="titulo-rol">
+            🎯 Analista de Datos
+            <span class="subtitulo-rol">
+              Automatización de Reportes con <strong>Python</strong>, <strong>Power&nbsp;BI</strong> y <strong>SQL</strong>
+            </span>
+          </h2>
         <p>Formación técnica en Desarrollo de Software y Tecnología en Redes de Datos, con más de 10 años de experiencia en logística y operaciones, ahora orientada al análisis de datos.</p>
         <p>Experiencia práctica en <span class="kws">Power BI (DAX, modelado estrella, KPIs)</span>, <span class="kws">SQL (consultas y joins)</span> y <span class="kws">Python (pandas, limpieza y visualización de datos)</span>, aplicados a la creación de dashboards, indicadores y reportes ejecutivos.</p>
         <p>Participación en proyectos de automatización de reportes en Excel y SAP, optimizando tiempos de gestión y mejorando la calidad de los datos.</p>
