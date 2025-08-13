@@ -502,6 +502,78 @@ td.descripcion {
             order: 1;
           }
         }
+    /* Contenedor global centrado (igual para todas las secciones) */
+        .section-inner{
+          max-width: 1100px;     /* ajusta si tu sitio usa otro ancho */
+          margin: 0 auto;
+          padding: 0 16px;
+          box-sizing: border-box;
+        }
+        
+        /* Encabezado + iconos */
+        .heading-with-icons{
+          display: flex;
+          align-items: center;
+          gap: .6rem;
+          flex-wrap: wrap;
+          min-width: 0;           /* evita que se “salga” en flex */
+        }
+        .heading-with-icons > *{
+          min-width: 0;           /* hijos no fuerzan ancho mayor */
+        }
+        .heading-with-icons h2{
+          margin: 0;
+          font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+        }
+        
+        /* Fila de iconos */
+        .iconos-proyectos{
+          display: flex;
+          align-items: center;
+          gap: .45rem;
+          min-width: 0;
+        }
+        .iconos-proyectos img{
+          width: clamp(20px, 3.2vw, 26px);
+          height: auto;
+          object-fit: contain;
+          transition: transform .25s ease, filter .25s ease;
+          cursor: pointer;
+        }
+        .iconos-proyectos img:hover{
+          transform: scale(1.15);
+          filter: brightness(1.2);
+        }
+        
+        /* Tabla: ocupa el ancho del contenedor y no se desborda */
+        .tabla-proyectos{
+          width: 100%;
+          border-collapse: collapse;
+          table-layout: fixed;     /* clave para que no “rompa” el layout */
+        }
+        .tabla-proyectos th,
+        .tabla-proyectos td{
+          white-space: normal;
+          word-wrap: break-word;
+          padding: .5rem;
+        }
+        
+        /* Móvil vertical: iconos debajo del título, todo alineado */
+        @media (max-width: 480px){
+          .iconos-proyectos{
+            flex-basis: 100%;
+            margin-left: 2rem;    /* alinea con el texto del título */
+            order: 2;
+          }
+          .heading-with-icons h2{
+            order: 1;
+          }
+          .tabla-proyectos th,
+          .tabla-proyectos td{
+            font-size: .85rem;
+          }
+        }
+
 
 </style>
 </head>
@@ -546,17 +618,18 @@ td.descripcion {
       <hr class="divider" />
     </div>
   </div>
-
-  <!-- ========== PROYECTOS DESTACADOS ========== -->
-       <section class="section">
-          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-            <h2 style="margin:0; font-size:1.5rem;">📈 Proyectos Destacados</h2>
-            <img src="Python.png" alt="Python" style="height:26px;">
-            <img src="SQL.png" alt="SQL" style="height:26px;">
-            <img src="PowerBI.png" alt="Power BI" style="height:26px;">
-            <img src="Excel.png" alt="Excel" style="height:26px;">
-          </div>
-        </div>
+       <!-- ========== PROYECTOS DESTACADOS ========== -->
+      <section class="section proyectos">
+        <div class="section-inner">
+          <div class="heading-with-icons">
+            <h2>📈 Proyectos Destacados</h2>
+            <div class="iconos-proyectos" aria-label="Tecnologías usadas">
+              <img src="Python.png" alt="Python">
+              <img src="SQL.png" alt="SQL">
+              <img src="PowerBI.png" alt="Power BI">
+              <img src="Excel.png" alt="Excel">
+            </div>
+         </div>
       </section>
     <div class="table-scroll">
       <table class="project-table">
