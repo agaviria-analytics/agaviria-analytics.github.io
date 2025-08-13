@@ -573,7 +573,28 @@ td.descripcion {
             font-size: .85rem;
           }
         }
-
+          /* === FIX: que TODO quede al mismo ancho del portafolio === */
+          .section{ max-width:1100px !important; margin:2rem auto !important; padding:1.5rem !important; }
+          
+          /* Proyectos Destacados: centra y limita el ancho aunque la tabla esté fuera de .section */
+          .table-scroll{ max-width:1100px !important; margin:0 auto !important; }
+          .project-table{ width:100% !important; max-width:1100px !important; margin:0 auto !important; }
+          
+          /* Evita que algún hijo flex empuje el layout y desalineé el panel */
+          .heading-with-icons,
+          .iconos-proyectos{ min-width:0 !important; }
+          
+          /* La tabla nunca debe “romper” el contenedor */
+          .project-table th, .project-table td{ word-wrap:break-word; white-space:normal; }
+        
+    @media (min-width: 1024px){
+        .section,
+        .table-scroll,
+        .project-table {
+          max-width:1100px !important;
+          margin:0 auto !important;
+        }
+      }
 
 </style>
 </head>
