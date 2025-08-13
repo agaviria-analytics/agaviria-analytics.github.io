@@ -483,8 +483,14 @@ td.descripcion {
           width: clamp(20px, 3.2vw, 26px);   /* 20–26 px según pantalla */
           height: auto;
           object-fit: contain;
+          cursor: pointer;
         }
         
+          /* Hover efecto brillo + zoom suave */
+          .iconos-proyectos img:hover{
+            transform: scale(1.15);
+            filter: brightness(1.2);
+          }
         /* En móvil vertical, pone los iconos debajo del título */
         @media (max-width: 480px){
           .iconos-proyectos{
