@@ -598,80 +598,41 @@ td.descripcion {
     .sobre-mi {
       text-align: justify;
   }
-              .edu-item{
-          display:flex;
-          align-items:center;
-          justify-content:space-between;
-          gap:10px;
-          flex-wrap:nowrap;           /* evita que el botón baje */
+             .edu-item {
+          display: flex;
+          align-items: baseline;         /* alinea texto y botón por la línea de base */
+          justify-content: flex-start;   /* botón junto al texto, no a la derecha */
+          gap: 12px;                     /* espacio entre texto y botón */
+          flex-wrap: wrap;               /* permite que el botón baje si no cabe */
         }
         
-        .edu-text{
-          flex:1;                     /* ocupa todo el ancho disponible */
-          min-width:0;                /* permite el wrap del texto largo */
+        .edu-text {
+          flex: 1 1 auto;                /* texto ocupa todo lo disponible */
+          min-width: 0;                  /* evita problemas de ajuste */
         }
         
-        .btn-diploma{
-          white-space:nowrap;         /* el botón no se parte ni baja */
-          background:#1ea43a;
-          color:#fff;
-          padding:4px 10px;
-          border-radius:6px;
-          text-decoration:none;
-          font-size:.9rem;
+        .btn-diploma {
+          flex: 0 0 auto;                /* el botón mantiene su tamaño */
+          min-width: 120px;              /* opcional: mismo ancho para todos */
+          text-align: center;
+          white-space: nowrap;           /* no partir el texto del botón */
+          background: #1ea43a;
+          color: #fff;
+          padding: 4px 10px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: .9rem;
         }
-            @media (max-width: 360px){
-          .edu-item{ flex-wrap:wrap; }
-          .btn-diploma{ margin-left:auto; }
+        
+        /* En pantallas pequeñas, si el botón baja, queda alineado a la izquierda */
+        @media (max-width: 640px) {
+          .edu-item {
+            flex-wrap: wrap;
+          }
+          .btn-diploma {
+            margin-left: 0;
+          }
         }
-                  .edu-item{
-            display:flex;
-            align-items:center;
-            justify-content:flex-start; /* <-- antes estaba space-between */
-            gap: 10px;                  /* espacio entre texto y botón */
-            flex-wrap: wrap;            /* permite que el botón baje si no cabe */
-          }
-          
-          .btn-diploma{
-            background:#1ea43a;
-            color:#fff;
-            padding:4px 10px;
-            border-radius:6px;
-            text-decoration:none;
-            white-space:nowrap;         /* el botón no se parte */
-          }
-            .btn-diploma{
-                min-width: 120px;  /* mismo ancho visual */
-                text-align:center;
-              }
-              /* resetea cualquier regla previa que use space-between */
-                .edu-item{
-                  display:flex;
-                  align-items:baseline;
-                  justify-content:flex-start !important;  /* evita que se vaya a la derecha */
-                  gap:12px;
-                }
-                
-                /* texto ocupa el espacio; permite que envuelva */
-                .edu-text{
-                  flex:1 1 auto;
-                  min-width:0;
-                }
-                
-                /* el botón no se estira ni se parte */
-                .btn-diploma{
-                  flex:0 0 auto;
-                  white-space:nowrap;
-                  background:#1ea43a;
-                  color:#fff;
-                  padding:4px 10px;
-                  border-radius:6px;
-                  text-decoration:none;
-                }
-            @media (max-width: 640px){
-                  .edu-item{ flex-wrap:wrap; }
-                  .btn-diploma{ margin-left:0; }  /* queda justo debajo del texto */
-                }
 </style>
 </head>
 <body>
