@@ -597,7 +597,7 @@ td.descripcion {
       }
     .sobre-mi {
       text-align: justify;
-  }
+        }
              .edu-item {
           display: flex;
           align-items: baseline;         /* alinea texto y botón por la línea de base */
@@ -633,6 +633,28 @@ td.descripcion {
             margin-left: 0;
           }
         }
+          /* ==== FIX Formación Académica ==== */
+          .section .edu-list .edu-item{
+            display: flex !important;
+            align-items: baseline !important;
+            justify-content: flex-start !important;  /* nada de right */
+            gap: 12px !important;
+            flex-wrap: wrap !important;
+          }
+          
+          .section .edu-list .edu-item .edu-text{
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+          }
+          
+          .section .edu-list .edu-item .btn-diploma{
+            display: inline-block !important;
+            float: none !important;
+            margin-left: 0 !important;      /* por si quedó de un media query previo */
+            white-space: nowrap !important;
+            min-width: 120px;               /* opcional: mismo ancho visual */
+            text-align: center;
+          }
 </style>
 </head>
 <body>
