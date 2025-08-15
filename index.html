@@ -707,6 +707,35 @@ td.descripcion {
               .btn-diploma:hover {
                 background: #218838;
               }    
+                
+                                /* ===== FIX definitivo: Formación Académica sin huecos ===== */
+                #educacion .edu-list{ list-style:none; margin:0; padding:0; }
+                
+                #educacion .edu-item{
+                  display: grid !important;
+                  grid-template-columns: 1fr max-content !important; /* texto + botón a la IZQ */
+                  align-items: baseline !important;
+                  column-gap: 12px !important;
+                  justify-content: start !important;   /* anula space-between heredado */
+                }
+                
+                #educacion .btn-diploma{
+                  justify-self: start !important;      /* pegado al texto */
+                  float: none !important;
+                  margin-left: 0 !important;
+                  white-space: nowrap !important;
+                }
+                
+                /* En móvil: si no cabe, el botón baja debajo del texto alineado a la izq */
+                @media (max-width: 640px){
+                  #educacion .edu-item{
+                    grid-template-columns: 1fr !important;
+                    row-gap: 6px !important;
+                  }
+                  #educacion .btn-diploma{
+                    justify-self: start !important;
+                  }
+                }
 </style>
 </head>
 <body>
@@ -925,19 +954,19 @@ td.descripcion {
   </section>
 
   <!-- ========== EDUCACIÓN ========== -->
-  <section class="section">
-    <h2>🎓 Formación Académica</h2>
-       <ul class="edu-list">
-      <li class="edu-item">
-          📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)
-          <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
-        </li>
-        <li class="edu-item">
-          📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)
-          <a href="cesde.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver certificado</a>
-        </li>
-      </ul>
-  </section>
+    <section class="section" id="educacion">
+          <h2>🎓 Formación Académica</h2>
+          <ul class="edu-list">
+            <li class="edu-item">
+              📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)
+              <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
+            </li>
+            <li class="edu-item">
+              📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)
+              <a href="cesde.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver certificado</a>
+            </li>
+          </ul>
+    </section>
   <!-- ========== CERTIFICADOS ========== -->
   <section class="section" id="certificados">
     <h2 style="text-align:center;">🎓 Certificados Destacados</h2>
