@@ -624,7 +624,26 @@ td.descripcion {
           .edu-item{ flex-wrap:wrap; }
           .btn-diploma{ margin-left:auto; }
         }
-
+                  .edu-item{
+            display:flex;
+            align-items:center;
+            justify-content:flex-start; /* <-- antes estaba space-between */
+            gap: 10px;                  /* espacio entre texto y botón */
+            flex-wrap: wrap;            /* permite que el botón baje si no cabe */
+          }
+          
+          .btn-diploma{
+            background:#1ea43a;
+            color:#fff;
+            padding:4px 10px;
+            border-radius:6px;
+            text-decoration:none;
+            white-space:nowrap;         /* el botón no se parte */
+          }
+            .btn-diploma{
+                min-width: 120px;  /* mismo ancho visual */
+                text-align:center;
+              }
 </style>
 </head>
 <body>
