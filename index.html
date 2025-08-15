@@ -597,145 +597,7 @@ td.descripcion {
       }
     .sobre-mi {
       text-align: justify;
-        }
-             .edu-item {
-          display: flex;
-          align-items: baseline;         /* alinea texto y botón por la línea de base */
-          justify-content: flex-start;   /* botón junto al texto, no a la derecha */
-          gap: 12px;                     /* espacio entre texto y botón */
-          flex-wrap: wrap;               /* permite que el botón baje si no cabe */
-        }
-        
-        .edu-text {
-          flex: 1 1 auto;                /* texto ocupa todo lo disponible */
-          min-width: 0;                  /* evita problemas de ajuste */
-        }
-        
-        .btn-diploma {
-          flex: 0 0 auto;                /* el botón mantiene su tamaño */
-          min-width: 120px;              /* opcional: mismo ancho para todos */
-          text-align: center;
-          white-space: nowrap;           /* no partir el texto del botón */
-          background: #1ea43a;
-          color: #fff;
-          padding: 4px 10px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-size: .9rem;
-        }
-        
-        /* En pantallas pequeñas, si el botón baja, queda alineado a la izquierda */
-        @media (max-width: 640px) {
-          .edu-item {
-            flex-wrap: wrap;
-          }
-          .btn-diploma {
-            margin-left: 0;
-          }
-        }
-          /* ==== FIX Formación Académica ==== */
-          .section .edu-list .edu-item{
-            display: flex !important;
-            align-items: baseline !important;
-            justify-content: flex-start !important;  /* nada de right */
-            gap: 12px !important;
-            flex-wrap: wrap !important;
-          }
-          
-          .section .edu-list .edu-item .edu-text{
-            flex: 1 1 auto !important;
-            min-width: 0 !important;
-          }
-          
-          .section .edu-list .edu-item .btn-diploma{
-            display: inline-block !important;
-            float: none !important;
-            margin-left: 0 !important;      /* por si quedó de un media query previo */
-            white-space: nowrap !important;
-            min-width: 120px;               /* opcional: mismo ancho visual */
-            text-align: center;
-          }
-                    /* ====== Formación Académica (layout estable) ====== */
-                .section .edu-list{ list-style:none; margin:0; padding:0; }
-                
-                .section .edu-list .edu-item{
-                  display: grid !important;
-                  grid-template-columns: 1fr max-content;   /* texto a la izq, botón pegado al texto */
-                  column-gap: 12px;
-                  align-items: baseline;
-                }
-                
-                .section .edu-list .edu-text{
-                  min-width: 0;                 /* permite el wrap del texto largo */
-                }
-                
-                .section .edu-list .btn-diploma{
-                  justify-self: start;          /* a la izquierda, junto al texto */
-                  float: none !important;       /* anula floats heredados */
-                  margin-left: 0 !important;    /* anula auto-margins heredados */
-                  white-space: nowrap;
-                  background:#28a745; color:#fff; padding:4px 10px;
-                  border-radius:6px; text-decoration:none; font-size:.85rem;
-                }
-                
-                /* En móvil: si no cabe, el botón baja debajo del texto, alineado a la izq */
-                @media (max-width: 640px){
-                  .section .edu-list .edu-item{
-                    grid-template-columns: 1fr;   /* una sola columna */
-                    row-gap: 6px;
-                  }
-                  .section .edu-list .btn-diploma{
-                    justify-self: start;          /* sigue a la izquierda */
-                  }
-                }  
-                  .edu-item {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                flex-wrap: wrap; /* si no cabe en móvil, baja a segunda línea */
-              }
-              
-              .btn-diploma {
-                background: #28a745;
-                color: #fff;
-                padding: 3px 8px;
-                border-radius: 4px;
-                font-size: 0.8rem;
-                text-decoration: none;
-              }
-              
-              .btn-diploma:hover {
-                background: #218838;
-              }    
-                
-                                /* ===== FIX definitivo: Formación Académica sin huecos ===== */
-                #educacion .edu-list{ list-style:none; margin:0; padding:0; }
-                
-                #educacion .edu-item{
-                  display: grid !important;
-                  grid-template-columns: 1fr max-content !important; /* texto + botón a la IZQ */
-                  align-items: baseline !important;
-                  column-gap: 12px !important;
-                  justify-content: start !important;   /* anula space-between heredado */
-                }
-                
-                #educacion .btn-diploma{
-                  justify-self: start !important;      /* pegado al texto */
-                  float: none !important;
-                  margin-left: 0 !important;
-                  white-space: nowrap !important;
-                }
-                
-                /* En móvil: si no cabe, el botón baja debajo del texto alineado a la izq */
-                @media (max-width: 640px){
-                  #educacion .edu-item{
-                    grid-template-columns: 1fr !important;
-                    row-gap: 6px !important;
-                  }
-                  #educacion .btn-diploma{
-                    justify-self: start !important;
-                  }
-                }
+  }
 </style>
 </head>
 <body>
@@ -954,19 +816,20 @@ td.descripcion {
   </section>
 
   <!-- ========== EDUCACIÓN ========== -->
-    <section class="section" id="educacion">
-          <h2>🎓 Formación Académica</h2>
-          <ul class="edu-list">
-            <li class="edu-item">
-              📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)
-              <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
-            </li>
-            <li class="edu-item">
-              📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)
-              <a href="cesde.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver certificado</a>
-            </li>
-          </ul>
-    </section>
+  <section class="section">
+    <h2>🎓 Formación Académica</h2>
+    <ul class="edu-list">
+      <li class="edu-item">
+          📌 Tecnólogo en Gestión de Redes de Datos – SENA (2016)
+          <a href="Titulo_Tecnologia.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver diploma</a>
+        </li>
+        <li class="edu-item">
+          📌 Técnico Asistente en Desarrollo de Software – CESDE (2025)
+          <a href="cesde.pdf" target="_blank" rel="noopener" class="btn-diploma">Ver Certificado</a>
+        </li>
+    </ul>
+  </section>
+
   <!-- ========== CERTIFICADOS ========== -->
   <section class="section" id="certificados">
     <h2 style="text-align:center;">🎓 Certificados Destacados</h2>
@@ -1018,4 +881,5 @@ td.descripcion {
   </footer>
 </body>
 </html>
+ 
  
