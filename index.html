@@ -687,7 +687,26 @@ td.descripcion {
                   .section .edu-list .btn-diploma{
                     justify-self: start;          /* sigue a la izquierda */
                   }
-                }        
+                }  
+                  .edu-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                flex-wrap: wrap; /* si no cabe en móvil, baja a segunda línea */
+              }
+              
+              .btn-diploma {
+                background: #28a745;
+                color: #fff;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                text-decoration: none;
+              }
+              
+              .btn-diploma:hover {
+                background: #218838;
+              }    
 </style>
 </head>
 <body>
