@@ -655,6 +655,39 @@ td.descripcion {
             min-width: 120px;               /* opcional: mismo ancho visual */
             text-align: center;
           }
+                    /* ====== Formación Académica (layout estable) ====== */
+                .section .edu-list{ list-style:none; margin:0; padding:0; }
+                
+                .section .edu-list .edu-item{
+                  display: grid !important;
+                  grid-template-columns: 1fr max-content;   /* texto a la izq, botón pegado al texto */
+                  column-gap: 12px;
+                  align-items: baseline;
+                }
+                
+                .section .edu-list .edu-text{
+                  min-width: 0;                 /* permite el wrap del texto largo */
+                }
+                
+                .section .edu-list .btn-diploma{
+                  justify-self: start;          /* a la izquierda, junto al texto */
+                  float: none !important;       /* anula floats heredados */
+                  margin-left: 0 !important;    /* anula auto-margins heredados */
+                  white-space: nowrap;
+                  background:#28a745; color:#fff; padding:4px 10px;
+                  border-radius:6px; text-decoration:none; font-size:.85rem;
+                }
+                
+                /* En móvil: si no cabe, el botón baja debajo del texto, alineado a la izq */
+                @media (max-width: 640px){
+                  .section .edu-list .edu-item{
+                    grid-template-columns: 1fr;   /* una sola columna */
+                    row-gap: 6px;
+                  }
+                  .section .edu-list .btn-diploma{
+                    justify-self: start;          /* sigue a la izquierda */
+                  }
+                }        
 </style>
 </head>
 <body>
