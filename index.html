@@ -598,14 +598,32 @@ td.descripcion {
     .sobre-mi {
       text-align: justify;
   }
+    .bio-wrap p.bio {
+  text-align: justify;
+  text-justify: inter-word; /* distribuye espacios entre palabras */
+  margin: 0.6rem auto;
+  line-height: 1.45;
+  max-width: 520px;  /* evita que se extienda demasiado en pantallas grandes */
+}
+
+/* En móvil vertical, que ocupe casi todo el ancho */
+@media (max-width:480px){
+  .bio-wrap p.bio{
+    max-width: 90%;
+    font-size: 1rem;   /* letra legible */
+  }
+}
 </style>
 </head>
 <body>
   <div class="section">
     <header>
       <h1>👋 Hola, soy Héctor Alejandro Gaviria Marín.</h1>
-      <p>Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, habilidades y experiencia en análisis de datos con Python, Power BI, MySQL y más.</p>
-
+      <p class="bio">
+          Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos, 
+          habilidades y experiencia en análisis de datos con Python, Power BI, 
+          MySQL y más.
+       </p>
       <div class="buttons">
   <a class="btn" href="Hoja_de_vida_Hector_Gaviria.pdf" target="_blank" rel="noopener">📄 Ver CV</a>
   <a class="btn" href="Hoja_de_vida_Hector_Gaviria.pdf" download rel="noopener">📥 Descargar CV</a>
